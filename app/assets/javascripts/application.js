@@ -11,9 +11,21 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require gritter
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+
+$(document).ready(
+    function() {
+      $.extend($.gritter.options, {
+            fade_in_speed: 100, // how fast notifications fade in (string or int)
+            fade_out_speed: 100, // how fast the notices fade out
+            time: 500 // hang on the screen for...
+          });
+});
