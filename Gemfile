@@ -34,6 +34,7 @@ gem 'paperclip'
 gem 'jquery-turbolinks'
 gem 'will_paginate'
 gem 'bullet', group: :development
+gem "jquery-fileupload-rails"
 
 # Use unicorn as the app server
 # gem 'unicorn'
