@@ -16,6 +16,7 @@
 //= require foundation
 //= require turbolinks
 //= require gritter
+//= require jquery-fileupload
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
