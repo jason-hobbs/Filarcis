@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/rmagick/rmagick.git
+  revision: 79e1708c7f6792a3a90cb8cb3ffaeb74c58e092e
+  specs:
+    rmagick (2.13.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -141,6 +147,7 @@ DEPENDENCIES
   jquery-turbolinks
   pg
   rails
+  rmagick!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

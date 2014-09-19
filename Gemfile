@@ -35,6 +35,7 @@ gem 'jquery-turbolinks'
 gem 'will_paginate'
 gem 'bullet', group: :development
 gem "jquery-fileupload-rails"
+gem "rmagick", :git => "https://github.com/rmagick/rmagick.git"
 
 # Use unicorn as the app server
 # gem 'unicorn'
