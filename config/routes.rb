@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+
+
   resources :uploads
 
-  resources :projects
+  resources :projects do
+    resources :contents
+  end
 
   resources :users
   root 'main#index'
