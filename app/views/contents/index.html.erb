@@ -1,4 +1,10 @@
 <div class="bodywrapper">
 <br>
 <%= link_to "Upload", new_project_content_path(@project) %>
+<br>
+
+
+<% @project.contents.each do |content| %>
+  <%= content.name %>
+<% end %>
 </div>
