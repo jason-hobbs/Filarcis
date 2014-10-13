@@ -5,6 +5,6 @@
 
 
 <% @project.contents.each do |content| %>
-  <%= content.name %>
+  <%= link_to content.name, project_content_path(@project, content) %><br>
 <% end %>
 </div>

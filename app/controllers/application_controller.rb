@@ -48,5 +48,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :get_project
 
+  def get_content
+    @content = @project.contents.find_by(id: params[:id])
+
+  end
+
+  helper_method :get_content
+
 
 end
