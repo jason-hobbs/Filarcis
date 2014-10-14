@@ -13,8 +13,8 @@
             <div class="panel-contents">
               <% @projects.each do |project| %>
                 <tr>
-                  <td><%= link_to image_tag("folder2.png", {:size=>"25" }), project_contents_path(project) %>
-<%= link_to project.name, project_contents_path(project) %></td><br>
+                  <td><%= link_to image_tag("folder2.png", {:size=>"25" }), project_contents_path(project), remote: true %>
+<%= link_to project.name, project_contents_path(project), remote: true %></td><br>
                 </tr>
               <% end %>
             </div>
@@ -24,8 +24,9 @@
 
 
   <div class="small-8 columns">
-    <div class="panel" id="panel2"><h3>Project Contents</h3>
-      <div class="panel-contents">test info 3</div>
+    <div class="panel project-contents" id="panel2">
+      <h3>Project Contents</h3>
+      <div class="bodywrapper"><p>test info 3</p></div>
     </div>
   </div>
 </div>

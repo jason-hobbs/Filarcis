@@ -4,10 +4,13 @@ class ContentsController < ApplicationController
   before_action :get_user
   before_action :get_project
   before_action :get_content, only: [:show]
+
   def index
-
     @contents = @project.contents
-
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def new

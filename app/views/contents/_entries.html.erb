@@ -1,0 +1,12 @@
+<h3><%= @project.name %></h3>
+<div class="bodywrapper">
+
+<%= link_to "Upload", new_project_content_path(@project) %>
+<br>
+
+
+<% @project.contents.each do |content| %>
+  <%= link_to content.name, project_content_path(@project, content) %><br>
+<% end %>
+<br>
+</div>
