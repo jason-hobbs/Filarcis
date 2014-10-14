@@ -26,8 +26,15 @@ class ContentsController < ApplicationController
   end
 
   def show
-    #pdf_filename = File.join(Rails.root, @content.location.url)
-    send_file(@content.location.current_path, :filename => @content.name, :disposition => 'inline', :type => "application/pdf")
+    if @content.name.include? ".pdf"
+      send_file(@content.location.current_path, :filename => @content.name, :disposition => 'inline', :type => "application/pdf")
+    elsif @content.name.include? ".jpg"
+      send_file(@content.location.current_path, :filename => @content.name, :disposition => 'inline', :type => "image/jpeg")
+    elsif @content.name.include? ".png"
+      send_file(@content.location.current_path, :filename => @content.name, :disposition => 'inline', :type => "image/png")
+    else
+      send_file(@content.location.current_path, :filename => @content.name)
+    end
   end
 
 private
