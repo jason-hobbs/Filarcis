@@ -32,7 +32,9 @@ class ContentsController < ApplicationController
     if @content.name.include? ".pdf"
       send_file(@content.location.current_path, :filename => @content.name, :target => "_blank", :disposition => 'inline', :type => "application/pdf", :x_sendfile=>true)
     elsif @content.name.include? ".jpg"
-      send_file(@content.location.current_path, {:filename => @content.name, :disposition => 'inline', :type => "image/jpeg"}, :target => "_blank", :x_sendfile=>true)
+      send_file(@content.location.current_path, :filename => @content.name, :disposition => 'inline', :type => "image/jpeg", :target => "_blank", :x_sendfile=>true)
+    elsif @content.name.include? ".jpeg"
+      send_file(@content.location.current_path, :filename => @content.name, :disposition => 'inline', :type => "image/jpeg", :target => "_blank", :x_sendfile=>true)
     elsif @content.name.include? ".png"
       send_file(@content.location.current_path, :filename => @content.name, :disposition => 'inline', :type => "image/png", :target => "_blank", :x_sendfile=>true)
     else
