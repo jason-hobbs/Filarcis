@@ -33,7 +33,7 @@
 /*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
 .breadcrumb a:first-child {
 	padding-left: 30px;
-	border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
+	/*border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
 }
 .breadcrumb a:first-child:before {
 	left: 14px;

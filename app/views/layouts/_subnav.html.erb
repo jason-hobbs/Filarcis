@@ -1,10 +1,15 @@
 <!-- a simple div with some links -->
 <div class="subcrumb">
 <div class="breadcrumb">
-	<a href="#" class="active">Browse</a>
-	<a href="#">Compare</a>
+	<% if @project.nil? %>
+	  <a href="#" class="active">Dash</a>
+	<% else %>
+	  <a href="#">Dash</a>
+		<a href="#" class="active"><%= @project.name %></a>
+	<% end %>
+	<!--<a href="#">Compare</a>
 	<a href="#">Order Confirmation</a>
-	<a href="#">Checkout</a>
+	<a href="#">Checkout</a>-->
 </div>
 </div>
 

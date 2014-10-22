@@ -1,0 +1,6 @@
+<% if @project.nil? %>
+  <a href="#" class="active">Dash</a>
+<% else %>
+  <a href="#">Dash</a>
+  <a href="#" class="active"><%= @project.name %></a>
+<% end %>
