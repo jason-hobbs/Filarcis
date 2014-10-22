@@ -1,5 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans);
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Merriweather Sans', arial, verdana;
+  font-size: 14px;
 }
 
 
@@ -146,7 +149,7 @@ table {
     }
 	td {
 		/*word-wrap: break-word;*/
-    
+
 		white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
