@@ -1,9 +1,5 @@
-<h3><%= @project.name %>&nbsp;&nbsp;<%= link_to "create folder", new_project_path(:parent_id => @project.id) %></h3>
+<h3><%= @project.name %>&nbsp;&nbsp;<%= link_to "Create Folder", new_project_path(:parent_id => @project.id) %>&nbsp;|&nbsp;<%= link_to "Upload", new_project_content_path(@project) %></h3>
 <div class="bodywrapper">
-
-<%= link_to "Upload", new_project_content_path(@project) %>
-<br>
-
 
 <% @project.contents.each do |content| %>
   <%= link_to content.name, project_content_path(@project, content) %><br>
