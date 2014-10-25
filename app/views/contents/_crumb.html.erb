@@ -2,5 +2,12 @@
   <a href="#" class="active">Dash</a>
 <% else %>
   <a href="#">Dash</a>
-  <a href="#" class="active"><%= @project.name %></a>
+  <% if @project.depth == 0 %>
+    <a href="#" class="active"><%= @project.name %></a>
+  <% else %>
+    <% @project.ancestors.each do |ancestor| %>
+      <a href="#"><%= ancestor.name %></a>
+    <% end %>
+    <a href="#" class="active"><%= @project.name %></a>
+  <% end %>
 <% end %>
