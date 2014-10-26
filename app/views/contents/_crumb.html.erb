@@ -1,13 +1,13 @@
 <% if @project.nil? %>
-  <a href="#" class="active">Dash</a>
+  <%= link_to 'Dash', dashboards_path, class: "active" %>
 <% else %>
-  <a href="#">Dash</a>
+  <%= link_to 'Dash', dashboards_path %>
   <% if @project.depth == 0 %>
-    <a href="#" class="active"><%= @project.name %></a>
+    <%= link_to @project.name, project_contents_path(@project), remote: true, class: "active" %>
   <% else %>
     <% @project.ancestors.each do |ancestor| %>
-      <a href="#"><%= ancestor.name %></a>
+      <%= link_to ancestor.name, project_contents_path(ancestor), remote: true %>
     <% end %>
-    <a href="#" class="active"><%= @project.name %></a>
+      <%= link_to @project.name, project_contents_path(@project), remote: true, class: "active" %>
   <% end %>
 <% end %>
