@@ -29,4 +29,12 @@ $(document).ready(
             fade_out_speed: 100, // how fast the notices fade out
             time: 1500 // hang on the screen for...
           });
+
+    $('.folder-nav').click(function()
+    {
+      $('.folder-nav').removeClass('folder-nav-active');
+      //$(this).removeClass('new');
+      $(this).addClass('folder-nav-active');
+    });
+
 });
