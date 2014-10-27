@@ -33,7 +33,6 @@ $(document).ready(
     $('.folder-nav').click(function()
     {
       $('.folder-nav').removeClass('folder-nav-active');
-      //$(this).removeClass('new');
       $(this).addClass('folder-nav-active');
     });
 
