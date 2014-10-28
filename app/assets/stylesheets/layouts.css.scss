@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Merriweather+Sans);
 
+a, a:visited, a:focus, a:active, a:hover{
+    outline:0 none !important;
+}
+
 body {
   font-family: 'Merriweather Sans', arial, verdana;
   font-size: 14px;

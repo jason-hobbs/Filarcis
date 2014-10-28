@@ -44,6 +44,16 @@ $(document).ready(
 
     $('.arrow').click(function()
     {
+      var origsrc = $(this).find('img').attr('src');
+      //alert(origsrc);
+      var src = '';
+      if (origsrc == '/assets/arrow-closed.png')
+         src = '/assets/arrow-open.png';
+      else
+         src = '/assets/arrow-closed.png';
+      $(this).find('img').attr('src', src);
+
+
       $(this).parent().next().toggle();
     });
 
