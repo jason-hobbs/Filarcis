@@ -45,7 +45,7 @@ $(document).ready(
     $('.arrow').click(function()
     {
       var origsrc = $(this).find('img').attr('src');
-      //alert(origsrc);
+      alert(origsrc);
       var src = '';
       if (origsrc == '/assets/arrow-closed.png')
          src = '/assets/arrow-open.png';
