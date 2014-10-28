@@ -45,12 +45,12 @@ $(document).ready(
     $('.arrow').click(function()
     {
       var origsrc = $(this).find('img').attr('src');
-      alert(origsrc);
+      //alert(origsrc);
       var src = '';
-      if (origsrc == '/assets/arrow-closed.png')
-         src = '/assets/arrow-open.png';
+      if (origsrc == '/images/arrow-closed.png')
+         src = '/images/arrow-open.png';
       else
-         src = '/assets/arrow-closed.png';
+         src = '/images/arrow-closed.png';
       $(this).find('img').attr('src', src);
 
 
