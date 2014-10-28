@@ -36,6 +36,9 @@ $(document).ready(
       $(this).addClass('folder-nav-active');
     });
 
-
+    $('.arrow').click(function()
+    {
+      $('.nested_folders').toggle();
+    });
 
 });

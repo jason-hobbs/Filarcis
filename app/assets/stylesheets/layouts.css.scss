@@ -59,7 +59,7 @@ body {
   }
 
   .panel-contents {
-    padding: 3px 15px 15px 15px;
+    padding: 3px 3px 3px 3px;
     vertical-align: baseline;
   }
 }
@@ -533,6 +533,7 @@ margin-left: 2px;
 
 .nested_folders {
   margin-left: 20px;
+  display: none;
 }
 
 .folder-nav {
