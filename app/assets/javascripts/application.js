@@ -38,9 +38,6 @@ $(document).ready(
 
     $('.arrow').click(function()
     {
-      //$('div').next('.nested_folders').toggle();
-      //$('.folder-nav').next('.nested_folders').toggle();
-      //$(this).next(".nested_folders").toggle();
       $(this).parent().next().toggle();
     });
 
