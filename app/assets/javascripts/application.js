@@ -38,7 +38,10 @@ $(document).ready(
 
     $('.arrow').click(function()
     {
-      $('.nested_folders').toggle();
+      //$('div').next('.nested_folders').toggle();
+      //$('.folder-nav').next('.nested_folders').toggle();
+      //$(this).next(".nested_folders").toggle();
+      $(this).parent().next().toggle();
     });
 
 });
