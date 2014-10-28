@@ -30,10 +30,16 @@ $(document).ready(
             time: 1500 // hang on the screen for...
           });
 
-    $('.folder-nav').click(function()
+    //$('.folder-nav').click(function()
+    //{
+      //$('.folder-nav').removeClass('folder-nav-active');
+      //$(this).addClass('folder-nav-active');
+    //});
+
+    $('.highlight').click(function()
     {
       $('.folder-nav').removeClass('folder-nav-active');
-      $(this).addClass('folder-nav-active');
+      $(this).parent().addClass('folder-nav-active');
     });
 
     $('.arrow').click(function()
