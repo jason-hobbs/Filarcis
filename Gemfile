@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.3'
+ruby '2.1.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
@@ -36,7 +36,7 @@ gem 'will_paginate'
 gem 'bullet', group: :development
 gem "jquery-fileupload-rails"
 gem "rmagick", :git => "https://github.com/rmagick/rmagick.git"
-
+gem 'ancestry'
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -29,4 +29,32 @@ $(document).ready(
             fade_out_speed: 100, // how fast the notices fade out
             time: 1500 // hang on the screen for...
           });
+
+    //$('.folder-nav').click(function()
+    //{
+      //$('.folder-nav').removeClass('folder-nav-active');
+      //$(this).addClass('folder-nav-active');
+    //});
+
+    $('.highlight').click(function()
+    {
+      $('.folder-nav').removeClass('folder-nav-active');
+      $(this).parent().addClass('folder-nav-active');
+    });
+
+    $('.arrow').click(function()
+    {
+      var origsrc = $(this).find('img').attr('src');
+      //alert(origsrc);
+      var src = '';
+      if (origsrc == '/assets/arrow-closed.png')
+         src = '/assets/arrow-open.png';
+      else
+         src = '/assets/arrow-closed.png';
+      $(this).find('img').attr('src', src);
+
+
+      $(this).parent().next().toggle();
+    });
+
 });
