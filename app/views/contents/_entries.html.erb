@@ -2,7 +2,11 @@
 <div class="bodywrapper">
 
 <% @project.contents.each do |content| %>
-  <%= link_to content.name, project_content_path(@project, content) %><br>
+  <% if content.content_type.include? 'image' %>
+    <%= image_tag content.location.url(:thumb).to_s %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %><br>
+  <% else %>
+    <%= link_to content.name, project_content_path(@project, content) %><br>
+  <% end %>
 <% end %>
 <br>
 </div>

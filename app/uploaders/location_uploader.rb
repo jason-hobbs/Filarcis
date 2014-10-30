@@ -1,10 +1,21 @@
 # encoding: utf-8
+require 'carrierwave/processing/mime_types'
 
 class LocationUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
+  include CarrierWave::MimeTypes
   # include CarrierWave::MiniMagick
+
+  process :set_content_type
+
+  process :save_content_type_and_size_in_model
+
+  def save_content_type_and_size_in_model
+    model.content_type = file.content_type if file.content_type
+    model.file_size = file.size
+  end
 
   # Choose what kind of storage to use for this uploader:
   storage :file
