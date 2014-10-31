@@ -5,15 +5,12 @@
   <div class="content_row">
     <% if content.content_type.include? 'image' %>
       <%= image_tag content.location.url(:thumb).to_s %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
-      <!-- <%= image_tag content.location.url(:thumb).to_s %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %><br> -->
     <% else %>
-      <%= link_to content.name, project_content_path(@project, content) %>
+      <%= image_tag("default2.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
     <% end %>
       <%= content.file_size %>
       <%= content.updated_at %>
     </div>
-    <!-- <%= link_to content.name, project_content_path(@project, content) %><br> -->
-
 <% end %>
 <br>
 </div>
