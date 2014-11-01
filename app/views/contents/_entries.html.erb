@@ -3,7 +3,7 @@
 
 <% @project.contents.each do |content| %>
   <div class="content_row">
-    <% if content.content_type.include? 'image' %>
+    <% if content.content_type.start_with? 'image' %>
       <%= image_tag content.location.url(:thumb).to_s %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
     <% else %>
       <%= image_tag("default2.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
