@@ -5,11 +5,16 @@
   <div class="content_row">
     <% if content.content_type.start_with? 'image' %>
       <%= image_tag content.location.url(:thumb).to_s %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
+    <% elsif content.content_type.include? '/pdf' %>
+      <%= image_tag("pdf3.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
+    <% elsif content.content_type.include? '/x-apple-diskimage' %>
+      <%= image_tag("dmg.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
     <% else %>
       <%= image_tag("default2.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
     <% end %>
       <%= content.file_size %>
       <%= content.updated_at %>
+      
     </div>
 <% end %>
 <br>
