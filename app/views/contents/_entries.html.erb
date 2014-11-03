@@ -3,18 +3,32 @@
 
 <% @project.contents.each do |content| %>
   <div class="content_row">
-    <% if content.content_type.start_with? 'image' %>
-      <%= image_tag content.location.url(:thumb).to_s %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
-    <% elsif content.content_type.include? '/pdf' %>
-      <%= image_tag("pdf3.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
-    <% elsif content.content_type.include? '/x-apple-diskimage' %>
-      <%= image_tag("dmg.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
-    <% else %>
-      <%= image_tag("default2.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
+
+
+    <% case content.content_type %>
+      <% when /image/ %>
+        <%= image_tag content.location.url(:thumb).to_s %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
+      <% when /pdf/ %>
+        <%= image_tag("pdf3.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
+      <% when /msword/ %>
+        <%= image_tag("doc.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
+      <% when /x-apple-diskimage/ %>
+        <%= image_tag("dmg.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
+      <% when /zip/ %>
+        <%= image_tag("zip.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
+      <% when /x-msdos-program/ %>
+        <%= image_tag("exe.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
+      <% when /officedocument.spreadsheetml.sheet/ %>
+        <%= image_tag("xls.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
+      <% else %>
+        <%= image_tag("default.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
     <% end %>
+
+
+
       <%= number_to_human_size(content.file_size) %>
       <%= content.updated_at.strftime("%u/%d/%Y %H:%M:%S") %>
-
+      <%= content.content_type %>
     </div>
 <% end %>
 <br>
