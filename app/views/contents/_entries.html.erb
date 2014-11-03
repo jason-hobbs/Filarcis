@@ -12,9 +12,9 @@
     <% else %>
       <%= image_tag("default2.png") %>&nbsp;<%= link_to content.name, project_content_path(@project, content) %>
     <% end %>
-      <%= content.file_size %>
-      <%= content.updated_at %>
-      
+      <%= number_to_human_size(content.file_size) %>
+      <%= content.updated_at.strftime("%u/%d/%Y %H:%M:%S") %>
+
     </div>
 <% end %>
 <br>
