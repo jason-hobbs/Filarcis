@@ -557,6 +557,8 @@ margin-left: 2px;
 }
 
 .content_row {
+  position: relative;
+  overflow: hidden;
   height: 55px;
   width: 100%;
   padding-bottom: 5px;
@@ -564,4 +566,30 @@ margin-left: 2px;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   margin-top: 5px;
+  padding-left: 10px;
+}
+
+.content_name {
+  display:inline-block;
+  float: left;
+  width: 50%;
+  img {
+    margin-right: 5px;
+  }
+}
+
+.content_size {
+  display:inline-block;
+  line-height: 50px;
+  padding-left: 10px;
+  width: 20%;
+  float: left;
+}
+
+.content_date {
+  display:inline-block;
+  line-height: 50px;
+  float: left;
+  padding-left: 10px;
+  width: 30%;
 }
