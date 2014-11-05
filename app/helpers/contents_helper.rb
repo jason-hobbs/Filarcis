@@ -1,7 +1,7 @@
 module ContentsHelper
   def file_type(content)
      case content.content_type
-       when /image/
+       when /^image/
          content_tag(:div, image_tag(content.location.url(:thumb).to_s) + link_to(content.name, project_content_path(@project, content)), :class => "content_name")
        when /pdf/
          content_tag(:div, image_tag("pdf3.png") + link_to(content.name, project_content_path(@project, content)), :class => "content_name")
