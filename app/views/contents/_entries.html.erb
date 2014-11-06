@@ -1,8 +1,16 @@
 <h3><%= @project.name %>&nbsp;&nbsp;<%= link_to "Create Folder", new_project_path(:parent_id => @project.id) %>&nbsp;|&nbsp;<%= link_to "Upload", new_project_content_path(@project) %></h3>
-<div class="bodywrapper">
+<div class="content_row_header">
+  <div class="content_name_header">Name</div>
+  <div class="content_size_header">Size</div>
+  <div class="content_date_header">Updated</div>
+</div>
 
 <% @project.contents.each do |content| %>
-  <%= link_to content.name, project_content_path(@project, content) %><br>
+  <div class="content_row">
+     <%= file_type content %>
+     <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size show-for-medium-up") %>
+     <%= content_tag(:div, content.updated_at.strftime("%u/%d/%Y %H:%M:%S"), :class => "content_date show-for-medium-up") %>
+     <!-- <%= content.content_type %> -->
+  </div>
 <% end %>
 <br>
-</div>
