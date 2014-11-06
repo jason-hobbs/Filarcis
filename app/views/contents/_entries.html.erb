@@ -1,8 +1,8 @@
 <h3><%= @project.name %>&nbsp;&nbsp;<%= link_to "Create Folder", new_project_path(:parent_id => @project.id) %>&nbsp;|&nbsp;<%= link_to "Upload", new_project_content_path(@project) %></h3>
 <div class="content_row_header">
   <div class="content_name_header">Name</div>
-  <div class="content_size_header">Size</div>
-  <div class="content_date_header">Updated</div>
+  <div class="content_size_header show-for-medium-up">Size</div>
+  <div class="content_date_header show-for-medium-up">Updated</div>
 </div>
 
 <% @project.contents.each do |content| %>
