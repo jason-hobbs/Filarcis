@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
   $('#new_content').fileupload
+    dropZone: $('#dropzone')
     add: (e, data) ->
       data.context = $(tmpl("template-upload", data.files[0]))
       $('#new_content').append(data.context)
