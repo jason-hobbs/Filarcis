@@ -12,3 +12,5 @@ jQuery ->
       if data.context
         progress = parseInt(data.loaded / data.total * 100, 10)
         data.context.find('.meter').css('width', progress + '%')
+    done: (e, data) ->
+      data.context.find('.meter').css('background', 'green')
