@@ -13,17 +13,12 @@
 
 
 
-<div class="row left">
-  <div class="small-12 columns">
-    <%= f.label "Upload", class: "bold" %><br>
-    <%= f.file_field :location %>
-  </div>
-</div>
 
-<div class="row left">
-  <div class="small-12 columns">
+    <!-- <%= f.label "Upload", class: "bold" %><br> -->
+    <%= f.file_field :location, multiple: true, name: "content[location]" %>
+  
 
-  <%= f.submit class: 'button tiny radius' %>
+  <!-- <%= f.submit class: 'button tiny radius' %> -->
 
 
 

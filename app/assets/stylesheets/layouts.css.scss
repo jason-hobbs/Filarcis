@@ -78,6 +78,16 @@ body {
   height: 100%;
 }
 
+#panel-upload {
+  height: 100%;
+  width: 400px;
+}
+
+.panel-contents-upload {
+  padding: 3px 15px 3px 15px;
+  vertical-align: baseline;
+}
+
 
 .stream-instance {
   /*height: 400px;*/
@@ -626,4 +636,37 @@ margin-left: 2px;
   float: left;
   padding-left: 10px;
   width: 30%;
+}
+
+#dropzone {
+    background: #008CBA;
+    border-radius: 3px;
+    width: 150px;
+    height: 50px;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#dropzone.in {
+    width: 370px;
+    height: 200px;
+    line-height: 200px;
+    font-size: larger;
+}
+#dropzone.hover {
+    background: lighten(#008CBA, 30%);
+}
+#dropzone.fade {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    opacity: 1;
+}
+
+input[type='file'] {
+  color: transparent;
 }

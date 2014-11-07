@@ -37,6 +37,8 @@ gem 'bullet', group: :development
 gem "jquery-fileupload-rails"
 gem "rmagick", :git => "https://github.com/rmagick/rmagick.git"
 gem 'ancestry'
+gem "jquery-ui-rails"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
