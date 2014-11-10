@@ -6,6 +6,7 @@ class ContentsController < ApplicationController
   before_action :get_content, only: [:show]
 
   def index
+    @projects = Project.where(:user_id => @user.id).order(:name)
     @contents = @project.contents
     respond_to do |format|
       format.js
