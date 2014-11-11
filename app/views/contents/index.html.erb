@@ -21,12 +21,7 @@
 
   <div class="small-12 medium-8 columns">
     <div class="panel project-contents" id="panel2">
-      <h3>Project Contents</h3>
-      <div class="bodywrapper">
-        <% @project.contents.each do |content| %>
-          <%= link_to content.name, project_content_path(@project, content) %><br>
-        <% end %>
-      </div>
+      <%= render 'entries' %>
     </div>
   </div>
 </div>
