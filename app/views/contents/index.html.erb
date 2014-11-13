@@ -1,10 +1,39 @@
-<div class="bodywrapper">
-<br>
-<%= link_to "Upload", new_project_content_path(@project) %>
-<br>
-
-
-<% @project.contents.each do |content| %>
-  <%= link_to content.name, project_content_path(@project, content) %><br>
-<% end %>
+<div class="subcrumb show-for-medium-up">
+  <div class="breadcrumb">
+    <%= render 'crumb' %>
+  </div>
 </div>
+
+<div class="bodywrapper">
+
+<br>
+<div class="row columns">
+  <div class="small-12 medium-4 columns">
+    <div class="panel" id="panel1"><h3>Personal</h3>
+      <div class="panel-contents">
+        Inbox<br>
+        Deleted Items
+      </div>
+    </div>
+    <div class="panel" id="panel2"><h3>Project Folders <%= link_to image_tag("folder-add2.png", {:size=>"25", :alt=>"New Project", :title=>"New Project", :style => "float: right; top: -4px; position: relative;"}), new_project_path %></h3>
+      <div class="panel-contents">
+        <%= nested_folders @projects.arrange(:order => :created_at) %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="small-12 medium-8 columns">
+    <div class="panel project-contents" id="panel2">
+      <%= render 'entries' %>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+<%= render 'highlight' %>
