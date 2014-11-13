@@ -1,3 +1,9 @@
 <script type='text/javascript'>
   $('#<%= @project.id %>').addClass('folder-nav-active');
-</script>  
+  $('#<%= @project.id %>').parent().show();
+  var src = '/images/arrow-open.png';
+  var origsrc = $('#<%= @project.id %>').parent().prev().find('img').attr('src');
+  //alert(origsrc);
+  if (origsrc == '/images/arrow-closed.png')
+    $('#<%= @project.id %>').parent().prev().find('img').first().attr('src', src);
+</script>
