@@ -1,7 +1,7 @@
 <div class="bodywrapper">
 <br>
 
-  <div class="panel" id="panel-upload"><h3>Upload Files</h3>
+  <div class="panel" id="panel-upload"><h3>Upload Files <%= link_to 'return', project_contents_path(@project), :style => "float: right;" %></h3>
     <div class="panel-contents-upload">
       <div id="dropzone" class="fade well">Drop files here</div>
       <p>Or click browse to open your file manager...</p>
