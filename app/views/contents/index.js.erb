@@ -4,3 +4,4 @@ $("<%= escape_javascript(render 'crumb') %>").appendTo(".breadcrumb");
 $("<%= escape_javascript(render 'entries') %>").appendTo(".project-contents");
 $('.folder-nav').removeClass('folder-nav-active');
 $('#<%= @project.id %>').addClass('folder-nav-active');
+window.history.pushState("object or string", "Title", "/projects/<%= @project.id %>/contents");
