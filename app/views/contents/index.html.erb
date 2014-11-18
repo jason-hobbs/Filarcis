@@ -1,3 +1,5 @@
+
+
 <div class="subcrumb show-for-medium-up">
   <div class="breadcrumb">
     <%= render 'crumb' %>
@@ -37,3 +39,9 @@
 
 
 <%= render 'highlight' %>
+
+<a href="#" data-reveal-id="myModal">Click Me For A Modal</a> <div id="myModal" class="reveal-modal" data-reveal>hello<a class="close-reveal-modal">&#215;</a> </div>
+<br><%= link_to "New Project", new_project_path %>
+
+
+<br><%= link_to "watch", new_project_path, data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} %>

@@ -2,10 +2,12 @@ class ProjectsController < ApplicationController
   before_action :get_user
   def new
     #@project = Project.new
+
     @project = Project.new(:parent_id => params[:parent_id])
+    render :layout => false
   end
 
-  def create    
+  def create
     @project = Project.new(project_params)
     @project.user_id = @user.id
     #@project.parent = params[:parent_id]
