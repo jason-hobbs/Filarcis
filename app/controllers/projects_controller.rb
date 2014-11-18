@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
     #@project.parent = params[:parent_id]
     respond_to do |format|
       if @project.save
-        format.html { redirect_to dashboards_path, notice: 'Project was successfully created.' }
+        format.html { redirect_to project_contents_path(@project) }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
