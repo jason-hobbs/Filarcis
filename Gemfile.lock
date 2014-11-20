@@ -37,6 +37,9 @@ GEM
       activerecord (>= 3.0.0)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
+    best_in_place (3.0.0)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     builder (3.2.2)
     bullet (4.14.0)
       activesupport (>= 3.0.0)
@@ -141,6 +144,7 @@ PLATFORMS
 DEPENDENCIES
   ancestry
   bcrypt (~> 3.1.7)
+  best_in_place
   bullet
   carrierwave
   coffee-rails (~> 4.0.0)

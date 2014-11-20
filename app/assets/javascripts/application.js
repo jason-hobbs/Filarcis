@@ -18,10 +18,13 @@
 //= require gritter
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require jquery.purr
+//= require best_in_place
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
 
+$('.best_in_place').best_in_place();
 
 $(document).ready(
     function() {
