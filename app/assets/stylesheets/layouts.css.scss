@@ -671,6 +671,9 @@ input[type='file'] {
   color: transparent;
 }
 
-.best_in_place {
-  width: 50px;
+.input_field input {
+  width: 400px;
+  margin: 0px;
+
+  display: inline-block;
 }
