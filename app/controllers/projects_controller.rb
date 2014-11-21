@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  respond_to :html, :json
   before_action :get_user
   def new
     #@project = Project.new
@@ -20,6 +21,12 @@ class ProjectsController < ApplicationController
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    @project.update_attributes(project_params)
+    respond_with @project
   end
 
   private
