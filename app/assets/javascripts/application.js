@@ -35,10 +35,13 @@ $(document).ready(
             time: 1500 // hang on the screen for...
           });
 
-
     $('.best_in_place').on("ajax:success", function () {
       location.reload();
     });
+
+    //$('.best_in_place').on("ajax:success", function () {
+    //  location.reload();
+    //});
 
     //$('.folder-nav').click(function()
     //{
