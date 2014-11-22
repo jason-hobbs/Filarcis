@@ -38,6 +38,7 @@ gem "jquery-fileupload-rails"
 gem "rmagick", :git => "https://github.com/rmagick/rmagick.git"
 gem 'ancestry'
 gem "jquery-ui-rails"
+gem 'best_in_place'
 
 # Use unicorn as the app server
 # gem 'unicorn'

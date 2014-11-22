@@ -670,3 +670,20 @@ margin-left: 2px;
 input[type='file'] {
   color: transparent;
 }
+
+.input_field input {
+  width: 400px;
+  margin: 0px;
+  display: inline-block;
+}
+
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #666;
+  &:first-letter { text-transform: uppercase };
+}
