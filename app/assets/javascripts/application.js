@@ -26,6 +26,7 @@ $(function(){ $(document).foundation(); });
 
 $('.best_in_place').best_in_place();
 
+
 $(document).ready(
     function() {
       $.extend($.gritter.options, {
@@ -33,6 +34,11 @@ $(document).ready(
             fade_out_speed: 100, // how fast the notices fade out
             time: 1500 // hang on the screen for...
           });
+
+
+    $('.best_in_place').on("ajax:success", function () {
+      location.reload();
+    });
 
     //$('.folder-nav').click(function()
     //{
