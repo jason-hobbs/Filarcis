@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-
   mount Ckeditor::Engine => '/ckeditor'
   resources :uploads
 
   resources :projects do
     resources :contents
+    resources :notes
   end
 
   resources :users
@@ -19,9 +19,6 @@ Rails.application.routes.draw do
     post 'login' => :create
     delete 'logout' => :destroy
   end
-
-  match '/note/:project_id', :action => 'note', :via => [:get], :controller => 'contents', as: :note
-
 
 
   resources :dashboards
