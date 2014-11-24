@@ -20,6 +20,10 @@ Rails.application.routes.draw do
     delete 'logout' => :destroy
   end
 
+  match '/note/:project_id', :action => 'note', :via => [:get], :controller => 'contents', as: :note
+
+
+
   resources :dashboards
 
   # The priority is based upon order of creation: first created -> highest priority.

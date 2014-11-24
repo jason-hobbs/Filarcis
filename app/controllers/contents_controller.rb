@@ -18,6 +18,10 @@ class ContentsController < ApplicationController
     @content=Content.new
   end
 
+  def note
+    @content=Content.new
+  end
+
   def create
     @content = Content.new(content_params)
     @content.project_id = @project.id
