@@ -5,12 +5,20 @@
   <div class="content_date_header show-for-medium-up">Updated</div>
 </div>
 
+<% @project.notes.order(:title).each do |content| %>
+<div class="content_row">
+  <%= content_tag(:div, image_tag("note.png") + link_to(content.title, project_note_path(@project, content)), :class => "content_name") %>
+  <%= content_tag(:div, "note", :class => "content_size show-for-medium-up") %>
+  <%= content_tag(:div, content.updated_at.strftime("%u/%d/%Y %H:%M:%S"), :class => "content_date show-for-medium-up") %>
+</div>
+<% end %>
+
+
 <% @project.contents.order(:name).each do |content| %>
   <div class="content_row">
      <%= file_type content %>
      <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size show-for-medium-up") %>
      <%= content_tag(:div, content.updated_at.strftime("%u/%d/%Y %H:%M:%S"), :class => "content_date show-for-medium-up") %>
-     <!-- <%= content.content_type %> -->
   </div>
 <% end %>
 <br>

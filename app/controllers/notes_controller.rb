@@ -19,7 +19,7 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.project_id = @project.id
     if @note.save
-      redirect_to dashboards_path, :gflash => { :success => "Files Uploaded" }
+      redirect_to project_contents_path(@project), :gflash => { :success => "Note Created" }
     else
       render :new
     end
@@ -31,7 +31,7 @@ class NotesController < ApplicationController
 
   private
 
-  def content_params
+  def note_params
     params.require(:note).permit(:title, :content, :project_id)
   end
 

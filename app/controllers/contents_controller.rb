@@ -8,6 +8,7 @@ class ContentsController < ApplicationController
   def index
     @projects = Project.where(:user_id => @user.id).order(:name)
     @contents = @project.contents
+    @notes = @project.notes
     respond_to do |format|
       format.js
       format.html
