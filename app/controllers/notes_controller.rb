@@ -2,6 +2,7 @@ class NotesController < ApplicationController
   before_action :require_signin
   before_action :get_user
   before_action :get_project
+  before_action :get_note, only: [:show, :edit]
 
   def index
     @notes = @project.notes
@@ -25,14 +26,22 @@ class NotesController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
   def show
-    @note = Note.find(params[:id])
+
   end
 
   private
 
   def note_params
     params.require(:note).permit(:title, :content, :project_id)
+  end
+
+  def get_note
+    @note = Note.find(params[:id])
   end
 
 end
