@@ -3,11 +3,23 @@
 <% else %>
   <%= link_to 'Dash', dashboards_path %>
   <% if @project.depth == 0 %>
-    <%= link_to @project.name, project_contents_path(@project), remote: true, class: "active" %>
+    <% if controller_name == 'notes' %>
+      <%= link_to @project.name, project_contents_path(@project), class: "active" %>
+    <% else %>
+      <%= link_to @project.name, project_contents_path(@project), remote: true, class: "active" %>
+    <% end %>
   <% else %>
     <% @project.ancestors.each do |ancestor| %>
-      <%= link_to ancestor.name, project_contents_path(ancestor), remote: true %>
+      <% if controller_name == 'notes' %>
+        <%= link_to ancestor.name, project_contents_path(ancestor) %>
+      <% else %>
+        <%= link_to ancestor.name, project_contents_path(ancestor), remote: true %>
+      <% end %>
     <% end %>
-      <%= link_to @project.name, project_contents_path(@project), remote: true, class: "active" %>
+      <% if controller_name == 'notes' %>
+        <%= link_to @project.name, project_contents_path(@project), class: "active" %>
+      <% else %>
+        <%= link_to @project.name, project_contents_path(@project), remote: true, class: "active" %>
+      <% end %>
   <% end %>
 <% end %>
