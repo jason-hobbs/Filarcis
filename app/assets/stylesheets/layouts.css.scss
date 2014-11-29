@@ -696,3 +696,7 @@ input[type='file'] {
   border: solid 2px #666;
   &:first-letter { text-transform: uppercase };
 }
+
+.padder {
+  padding: 5px;
+}
