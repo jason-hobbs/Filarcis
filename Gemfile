@@ -39,6 +39,8 @@ gem "rmagick", :git => "https://github.com/rmagick/rmagick.git"
 gem 'ancestry'
 gem "jquery-ui-rails"
 gem 'best_in_place'
+gem 'ckeditor'
+gem 'mini_magick'
 
 # Use unicorn as the app server
 # gem 'unicorn'

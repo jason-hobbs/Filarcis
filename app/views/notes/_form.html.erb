@@ -1,0 +1,31 @@
+<div class="padder">
+<%= form_for [@project, @note] do |f| %>
+<% if @note.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@note.errors.count, "error") %> prohibited this file from being saved:</h2>
+
+  <ul>
+    <% @note.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+    <%= f.label "Title", class: "bold" %><br>
+    <%= f.text_field :title, :size=>"50", class: "radius entry" %>
+
+
+
+    <%= f.label "Entry", class: "bold" %><br>
+    <%= f.cktext_area :content %>
+    <br>
+
+
+    <%= f.submit "Save Note", class: 'button tiny radius' %>
+
+
+
+<% end %>
+</div>

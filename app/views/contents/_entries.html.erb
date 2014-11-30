@@ -1,16 +1,24 @@
-<h3><%= best_in_place @project, :name, {:class => "input_field"} %><%= content_tag(:div, link_to("Upload", new_project_content_path(@project)),:style => "float:right;") %><%= content_tag(:div, "|",:style => "float:right;padding-left: 5px;padding-right: 5px;") %><%= content_tag(:div, link_to("Create Folder", new_project_path(:parent_id => @project.id), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} ),:style => "float:right;") %>  </h3>
+<h3><%= best_in_place @project, :name, {:class => "input_field"} %><%= content_tag(:div, link_to("Upload", new_project_content_path(@project)),:style => "float:right;") %><%= content_tag(:div, "|",:style => "float:right;padding-left: 5px;padding-right: 5px;") %><%= content_tag(:div, link_to("Create Folder", new_project_path(:parent_id => @project.id), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} ),:style => "float:right;") %><%= content_tag(:div, "|",:style => "float:right;padding-left: 5px;padding-right: 5px;") %><%= content_tag(:div, link_to("Create Note", new_project_note_path(@project)),:style => "float:right;") %>  </h3>
 <div class="content_row_header">
+
   <div class="content_name_header">Name</div>
-  <div class="content_size_header show-for-medium-up">Size</div>
-  <div class="content_date_header show-for-medium-up">Updated</div>
+  <div class="content_size_header show-for-large-up">Size</div>
+  <div class="content_date_header show-for-large-up">Updated</div>
 </div>
+
+<% @project.notes.order(:title).each do |content| %>
+<div class="content_row">
+  <%= image_tag("note.png", :style => 'float:left;') + content_tag(:div, link_to(content.title, project_note_path(@project, content)), :class => "content_name") %>
+  <%= content_tag(:div, "note", :class => "content_size show-for-large-up") %>
+  <%= content_tag(:div, content.updated_at.strftime("%u/%d/%Y %H:%M:%S"), :class => "content_date show-for-large-up") %>
+</div>
+<% end %>
+
 
 <% @project.contents.order(:name).each do |content| %>
   <div class="content_row">
      <%= file_type content %>
-     <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size show-for-medium-up") %>
-     <%= content_tag(:div, content.updated_at.strftime("%u/%d/%Y %H:%M:%S"), :class => "content_date show-for-medium-up") %>
-     <!-- <%= content.content_type %> -->
+     <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size show-for-large-up") %>
+     <%= content_tag(:div, content.updated_at.strftime("%u/%d/%Y %H:%M:%S"), :class => "content_date show-for-large-up") %>
   </div>
 <% end %>
-<br>
