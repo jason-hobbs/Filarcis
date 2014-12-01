@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   before_action :require_signin
   before_action :get_user
   before_action :get_project
-  before_action :get_note, only: [:show, :edit]
+  before_action :get_note, only: [:show, :edit, :update]
 
   def index
     @notes = @project.notes
@@ -32,6 +32,14 @@ class NotesController < ApplicationController
 
   def show
 
+  end
+
+  def update
+    if @note.update(note_params)
+      redirect_to project_note_path(@project, @note), :gflash => { :success => "Note saved" }
+    else
+      render :edit
+    end
   end
 
   private
