@@ -35,7 +35,9 @@ class ContentsController < ApplicationController
   end
 
   def destroy_multiple
-    #fail
+    @test = params[:content_ids]
+    console
+    fail
     #Content.destroy(params[:content_ids])
     Content.where(:project_id => @project, :id => params[:content_ids]).delete_all
     Note.where(:project_id => @project, :id => params[:content_ids]).delete_all
@@ -45,7 +47,7 @@ class ContentsController < ApplicationController
 private
 
 def content_params
-    params.require(:content).permit(:name, :location, :project_id)
+    params.require(:content).permit(:name, :location, :project_id, :content_ids[])
 end
 
 end
