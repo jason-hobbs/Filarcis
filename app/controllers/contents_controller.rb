@@ -35,10 +35,11 @@ class ContentsController < ApplicationController
   end
 
   def destroy_multiple
-    @test = params[:content_ids]
     console
-    fail
-    #Content.destroy(params[:content_ids])
+    params[:content_ids].each do |file|
+      @content = @project.contents.find_by(id: file)
+      @content.remove_location!
+    end
     Content.where(:project_id => @project, :id => params[:content_ids]).delete_all
     Note.where(:project_id => @project, :id => params[:content_ids]).delete_all
     redirect_to project_contents_path(@project)
