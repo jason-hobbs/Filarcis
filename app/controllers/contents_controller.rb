@@ -38,7 +38,9 @@ class ContentsController < ApplicationController
     console
     params[:content_ids].each do |file|
       @content = @project.contents.find_by(id: file)
-      @content.remove_location!
+      if @content
+        @content.remove_location!
+      end
     end
     Content.where(:project_id => @project, :id => params[:content_ids]).delete_all
     Note.where(:project_id => @project, :id => params[:content_ids]).delete_all
