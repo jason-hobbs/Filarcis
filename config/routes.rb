@@ -4,8 +4,16 @@ Rails.application.routes.draw do
   resources :uploads
 
   resources :projects do
-    resources :contents
-    resources :notes
+    resources :contents do
+      collection do
+        delete 'destroy_multiple'
+      end
+    end
+    resources :notes do
+      collection do
+        delete 'destroy_multiple'
+      end
+    end  
   end
 
   resources :users

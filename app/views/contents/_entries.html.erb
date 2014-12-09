@@ -1,4 +1,5 @@
-<h3><%= best_in_place @project, :name, {:class => "input_field"} %><%= content_tag(:div, link_to("Upload", new_project_content_path(@project)),:style => "float:right;") %><%= content_tag(:div, "|",:style => "float:right;padding-left: 5px;padding-right: 5px;") %><%= content_tag(:div, link_to("Create Folder", new_project_path(:parent_id => @project.id), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} ),:style => "float:right;") %><%= content_tag(:div, "|",:style => "float:right;padding-left: 5px;padding-right: 5px;") %><%= content_tag(:div, link_to("Create Note", new_project_note_path(@project)),:style => "float:right;") %>  </h3>
+<%= form_tag destroy_multiple_project_contents_path, :multipart => true, method: :delete, id: "delete_form" do %>
+<h3><%= best_in_place @project, :name, {:class => "input_field"} %><%= content_tag(:div, link_to('Delete Checked', "#"), :onclick => "$('#delete_form').submit()",:style => "float:right;") %><%= content_tag(:div, "|",:style => "float:right;padding-left: 5px;padding-right: 5px;") %><%= content_tag(:div, link_to("Upload", new_project_content_path(@project)),:style => "float:right;") %><%= content_tag(:div, "|",:style => "float:right;padding-left: 5px;padding-right: 5px;") %><%= content_tag(:div, link_to("Create Folder", new_project_path(:parent_id => @project.id), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} ),:style => "float:right;") %><%= content_tag(:div, "|",:style => "float:right;padding-left: 5px;padding-right: 5px;") %><%= content_tag(:div, link_to("Create Note", new_project_note_path(@project)),:style => "float:right;") %>  </h3>
 <div class="content_row_header">
 
   <div class="content_name_header">Name</div>
@@ -11,6 +12,7 @@
   <%= image_tag("note.png", :style => 'float:left;') + content_tag(:div, link_to(content.title, project_note_path(@project, content)), :class => "content_name") %>
   <%= content_tag(:div, "note", :class => "content_size show-for-large-up") %>
   <%= content_tag(:div, content.updated_at.strftime("%u/%d/%Y %H:%M:%S"), :class => "content_date show-for-large-up") %>
+  <%= content_tag(:div, check_box_tag("content_ids[]", content.id), :class => "content_remove") %>
 </div>
 <% end %>
 
@@ -20,5 +22,8 @@
      <%= file_type content %>
      <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size show-for-large-up") %>
      <%= content_tag(:div, content.updated_at.strftime("%u/%d/%Y %H:%M:%S"), :class => "content_date show-for-large-up") %>
+     <%= content_tag(:div, check_box_tag("content_ids[]", content.id), :class => "content_remove") %>
   </div>
+<% end %>
+
 <% end %>

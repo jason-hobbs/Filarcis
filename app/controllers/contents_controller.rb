@@ -34,10 +34,24 @@ class ContentsController < ApplicationController
     send_file(@content.location.current_path, :filename => @content.name, :target => "_blank", :disposition => 'inline', :type => @content.content_type, :x_sendfile=>true)
   end
 
+  def destroy_multiple
+    if(params[:content_ids])
+      params[:content_ids].each do |file|
+        @content = @project.contents.find_by(id: file)
+        if @content
+          @content.remove_location!
+        end
+      end
+      Content.where(:project_id => @project, :id => params[:content_ids]).delete_all
+      Note.where(:project_id => @project, :id => params[:content_ids]).delete_all
+    end
+    redirect_to project_contents_path(@project)
+  end
+
 private
 
 def content_params
-    params.require(:content).permit(:name, :location, :project_id)
+    params.require(:content).permit(:name, :location, :project_id, :content_ids[])
 end
 
 end

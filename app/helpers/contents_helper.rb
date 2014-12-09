@@ -16,7 +16,7 @@ module ContentsHelper
        when /officedocument.spreadsheetml.sheet/
          image_tag("xls.png", :style => 'float:left;') + content_tag(:div, link_to(content.name, project_content_path(@project, content)), :class => "content_name")
        else
-         image_tag("default2.png", :style => 'float:left;') + content_tag(:div, link_to(content.name, project_content_path(@project, content)), :class => "content_name")     
+         image_tag("default2.png", :style => 'float:left;') + content_tag(:div, link_to(content.name, project_content_path(@project, content)), :class => "content_name")
      end
   end
 end
