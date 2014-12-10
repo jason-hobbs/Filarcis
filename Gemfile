@@ -36,7 +36,8 @@ gem 'jquery-turbolinks'
 gem 'will_paginate'
 gem 'bullet', group: :development
 gem "jquery-fileupload-rails"
-gem "rmagick", :git => "https://github.com/rmagick/rmagick.git"
+gem "rmagick"
+gem "rack-test"
 gem 'ancestry'
 gem "jquery-ui-rails"
 gem 'best_in_place'

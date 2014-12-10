@@ -51,7 +51,7 @@ class ContentsController < ApplicationController
 private
 
 def content_params
-    params.require(:content).permit(:name, :location, :project_id, :content_ids[])
+    params.require(:content).permit(:name, :location, :project_id)
 end
 
 end
