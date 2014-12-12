@@ -31,7 +31,7 @@ GEM
       activerecord (>= 3.0.0)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
-    best_in_place (3.0.0)
+    best_in_place (3.0.1)
       actionpack (>= 3.2)
       railties (>= 3.2)
     binding_of_caller (0.7.2)
