@@ -29,6 +29,10 @@ class ProjectsController < ApplicationController
     respond_with @project
   end
 
+  def destroy
+    fail
+  end
+
   private
   def project_params
       params.require(:project).permit(:name, :parent_id)
