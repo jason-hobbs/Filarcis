@@ -29,6 +29,12 @@ class ProjectsController < ApplicationController
     respond_with @project
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to dashboards_path
+  end
+
   private
   def project_params
       params.require(:project).permit(:name, :parent_id)

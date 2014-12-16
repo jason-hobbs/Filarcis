@@ -10,8 +10,8 @@
         Deleted Items
       </div>
     </div>
-    <div class="panel" id="panel2"><h3>Project Folders <%= link_to image_tag("folder-add2.png", {:size=>"25", :alt=>"New Project", :title=>"New Project", :style => "float: right; top: -4px; position: relative;"}), new_project_path, data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} %></h3>
-      <div class="panel-contents">
+    <div class="panel" id="panel2"><h3>Project Folders <%= link_to image_tag("folder-add3.png", {:size=>"25", :alt=>"New Project", :title=>"New Project", :style => "float: right; top: -4px; position: relative;"}), new_project_path, data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} %></h3>
+    <div class="panel-contents">
         <%= nested_folders @projects.arrange(:order => :created_at) %>
       </div>
     </div>
