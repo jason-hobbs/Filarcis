@@ -31,7 +31,6 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
-    fail
     @project.destroy
     redirect_to dashboards_path
   end
