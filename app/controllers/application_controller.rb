@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
   helper_method :get_user
 
   def get_project
-    @project = Project.find(params[:project_id])
+      @project = Project.find(params[:project_id])
   end
 
   helper_method :get_project
