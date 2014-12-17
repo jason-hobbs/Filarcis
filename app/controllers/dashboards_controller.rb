@@ -7,5 +7,6 @@ class DashboardsController < ApplicationController
       @user = current_user
     end
       @projects = Project.where(:user_id => @user.id).order(:name)
+      @project = Project.where(:user_id => @user.id, :name => "inbox")
   end
 end
