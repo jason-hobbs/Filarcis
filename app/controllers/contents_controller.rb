@@ -6,7 +6,7 @@ class ContentsController < ApplicationController
   before_action :get_content, only: [:show]
 
   def index
-    @projects = Project.where(:user_id => @user.id).order(:name)
+    @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
     @contents = @project.contents
     @notes = @project.notes
     respond_to do |format|
