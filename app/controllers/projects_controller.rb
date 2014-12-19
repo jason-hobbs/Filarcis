@@ -31,7 +31,9 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
-    @project.destroy
+    unless @project.name == 'inbox-system'
+      @project.destroy
+    end
     redirect_to dashboards_path
   end
 
