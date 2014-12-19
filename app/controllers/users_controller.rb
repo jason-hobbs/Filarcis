@@ -23,7 +23,7 @@ end
 def create
   		@user = User.new(user_params)
   		if @user.save
-		    #session[:user_id] = @user.id
+		    #session[:user_id] = @user.id        
         object = Project.new(:name => "inbox-system", :user_id => @user.id)
         object.save
     		redirect_to @user, :gflash => { :success => "Account Created" }
