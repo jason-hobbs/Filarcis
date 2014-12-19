@@ -13,7 +13,7 @@
   <div class="small-12 medium-4 columns">
     <div class="panel" id="panel1"><h3>Personal</h3>
       <div class="panel-contents">
-        Inbox<br>
+        <%= content_tag(:div, link_to(image_tag("folder2.png", {:size=>"25" }), dashboards_path, remote: true) + link_to("Inbox", dashboards_path, remote: true), :class => "folder-nav", :id => @inbox.id) %>
         Deleted Items
       </div>
     </div>

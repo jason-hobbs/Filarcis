@@ -3,6 +3,7 @@ class ContentsController < ApplicationController
   #before_action :require_admin
   before_action :get_user
   before_action :get_project
+  before_action :get_inbox
   before_action :get_content, only: [:show]
 
   def index

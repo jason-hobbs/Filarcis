@@ -43,6 +43,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :get_user
 
+  def get_inbox
+    @inbox = Project.find_by(:name => 'inbox-system', :user_id => @user.id)
+  end
+
+  helper_method :get_inbox
+
   def get_project
       @project = Project.find(params[:project_id])
   end
