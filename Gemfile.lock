@@ -61,7 +61,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.5)
       climate_control (>= 0.0.3, < 1.0)
-    coffee-rails (4.0.1)
+    coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
     coffee-script (2.3.0)
@@ -141,12 +141,13 @@ GEM
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
     rmagick (2.13.4)
-    sass (3.2.19)
-    sass-rails (4.0.5)
+    sass (3.3.14)
+    sass-rails (5.0.0)
       railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.2)
-      sprockets (~> 2.8, < 3.0)
-      sprockets-rails (~> 2.0)
+      sass (~> 3.1)
+      sprockets (>= 2.8, < 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+      tilt (~> 1.1)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -183,15 +184,15 @@ PLATFORMS
 
 DEPENDENCIES
   ancestry
-  bcrypt (~> 3.1.7)
+  bcrypt
   best_in_place
   bullet
   carrierwave
   ckeditor
-  coffee-rails (~> 4.0.0)
+  coffee-rails
   foundation-rails
   gritter
-  jbuilder (~> 2.0)
+  jbuilder
   jquery-fileupload-rails
   jquery-rails
   jquery-turbolinks
@@ -202,10 +203,10 @@ DEPENDENCIES
   rails
   responders
   rmagick
-  sass-rails (~> 4.0.3)
-  sdoc (~> 0.4.0)
+  sass-rails
+  sdoc
   spring
   turbolinks
-  uglifier (>= 1.3.0)
+  uglifier
   web-console
   will_paginate
