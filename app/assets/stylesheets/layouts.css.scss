@@ -551,9 +551,9 @@ margin-left: 2px;
 }
 
 .folder-nav {
-  a:link {
+  a:link, a:visited, a:focus, a:active, a:hover {
     text-decoration: none;
-    color: #5e6469;
+    /*color: #5e6469;*/
   }
 }
 
