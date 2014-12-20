@@ -43,7 +43,7 @@ gem "jquery-ui-rails"
 gem 'best_in_place'
 gem 'ckeditor'
 gem 'mini_magick'
-
+gem 'responders'
 # Use unicorn as the app server
 # gem 'unicorn'
 
