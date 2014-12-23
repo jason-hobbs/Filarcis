@@ -60,6 +60,7 @@ $(document).ready(
 
 
     $( ".folder-nav" ).droppable({
+      hoverClass: "green",
       drop: function() {
         alert("dropped! - " + $(this).attr('id'))
       }
