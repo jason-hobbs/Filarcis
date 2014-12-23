@@ -29,7 +29,6 @@ $(function(){ $(document).foundation(); });
 
 $('.best_in_place').best_in_place();
 
-
 $(document).ready(
     function() {
       $.extend($.gritter.options, {
@@ -51,6 +50,21 @@ $(document).ready(
       //$('.folder-nav').removeClass('folder-nav-active');
       //$(this).addClass('folder-nav-active');
     //});
+
+
+    //$( ".img_preview" ).draggable();
+
+    doDraggable();
+
+
+
+
+    $( ".folder-nav" ).droppable({
+      drop: function() {
+        alert("dropped! - " + $(this).attr('id'))
+      }
+    });
+
 
     $('.highlight').click(function()
     {
@@ -74,6 +88,19 @@ $(document).ready(
     });
 
 });
+
+
+function doDraggable() {
+  $(".img_preview").draggable({
+    revert: "invalid" ,
+    helper: function(){
+      $copy = $(this).clone();
+      return $copy;},
+      appendTo: 'body',
+      scroll: false
+    });
+}
+
 
 
 $(document).bind('dragover', function (e) {

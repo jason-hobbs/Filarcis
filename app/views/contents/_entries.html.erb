@@ -13,7 +13,7 @@
 
 <% @project.notes.order(:title).each do |content| %>
 <div class="content_row">
-  <%= image_tag("note.png", :style => 'float:left;') + content_tag(:div, link_to(content.title, project_note_path(@project, content)), :class => "content_name") %>
+  <%= image_tag("note.png", :style => 'float:left;', :class => "note_preview", :id => content.id) + content_tag(:div, link_to(content.title, project_note_path(@project, content)), :class => "content_name") %>
   <%= content_tag(:div, "note", :class => "content_size show-for-large-up") %>
   <%= content_tag(:div, content.updated_at.strftime("%u/%d/%Y %H:%M:%S"), :class => "content_date show-for-large-up") %>
   <%= content_tag(:div, check_box_tag("content_ids[]", content.id), :class => "content_remove") %>
