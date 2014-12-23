@@ -21,6 +21,8 @@
 //= require jquery.purr
 //= require best_in_place
 //= require ckeditor/init
+//= require jquery-ui/draggable
+//= require jquery-ui/droppable
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
