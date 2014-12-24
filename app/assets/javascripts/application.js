@@ -63,9 +63,6 @@ $(document).ready(
       hoverClass: "green",
       drop: function(event, ui) {
         var n = $("input[type='checkbox']:checked").length;
-        //alert($("input[type='checkbox']:checked").map(
-          //function () {return this.value;}).get().join(","));
-        //alert("size: " + n);
         if(n > 0)
         {
           var pick = $("input[type='checkbox']:checked").map(function () {return this.value;}).get().join(",");
@@ -107,8 +104,15 @@ function doDraggable(event, ui) {
   $(".img_preview").draggable({
     revert: "invalid" ,
     helper: function(){
-      $copy = $(this).clone();
-      return $copy;},
+      var n = $("input[type='checkbox']:checked").length;
+      if(n > 0) {
+        return $( "<div class='draggableHelper'>" + n + " items</div>" );
+      }
+      else
+      {
+        $copy = $(this).clone();
+        return $copy;
+      }},
       appendTo: 'body',
       scroll: false
     });

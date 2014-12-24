@@ -720,3 +720,14 @@ input[type='file'] {
     color: #fff;
   }
 }
+
+.draggableHelper {
+  padding: 5px;
+  font-weight: bold;
+  font-size: small;
+  color: black;
+  border-radius: 3px;
+  background-color: #ccffff;
+  opacity: 0.6;
+
+}
