@@ -711,5 +711,12 @@ input[type='file'] {
 }
 
 .green {
-  background-color: green;
+  /*background-color: #00cc66;*/
+  background-color: #3399cc;
+  border-radius: 3px;
+  opacity: .7;
+  a:link, a:visited, a:focus, a:active, a:hover {
+    text-decoration: none;
+    color: #fff;
+  }
 }
