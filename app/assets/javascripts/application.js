@@ -61,8 +61,8 @@ $(document).ready(
 
     $( ".folder-nav" ).droppable({
       hoverClass: "green",
-      drop: function() {
-        alert("dropped! - " + $(this).attr('id'))
+      drop: function(event, ui) {
+        alert("dropped! Destination: " + $(this).attr('id') + " - Source: " + ui.draggable.attr('id'))
       }
     });
 
@@ -91,7 +91,7 @@ $(document).ready(
 });
 
 
-function doDraggable() {
+function doDraggable(event, ui) {
   $(".img_preview").draggable({
     revert: "invalid" ,
     helper: function(){
@@ -100,7 +100,7 @@ function doDraggable() {
       appendTo: 'body',
       scroll: false
     });
-    
+
 }
 
 
