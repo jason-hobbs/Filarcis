@@ -62,7 +62,19 @@ $(document).ready(
     $( ".folder-nav" ).droppable({
       hoverClass: "green",
       drop: function(event, ui) {
-        alert("dropped! Destination: " + $(this).attr('id') + " - Source: " + ui.draggable.attr('id'))
+        var n = $("input[type='checkbox']:checked").length;
+        //alert($("input[type='checkbox']:checked").map(
+          //function () {return this.value;}).get().join(","));
+        //alert("size: " + n);
+        if(n > 0)
+        {
+          var pick = $("input[type='checkbox']:checked").map(function () {return this.value;}).get().join(",");
+        }
+        else
+        {
+          var pick = ui.draggable.attr('id');
+        }
+        alert("dropped! Destination: " + $(this).attr('id') + " - Source: " + pick);
       }
     });
 
