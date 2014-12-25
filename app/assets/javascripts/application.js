@@ -41,19 +41,7 @@ $(document).ready(
       location.reload();
     });
 
-    //$('.best_in_place').on("ajax:success", function () {
-    //  location.reload();
-    //});
-
-    //$('.folder-nav').click(function()
-    //{
-      //$('.folder-nav').removeClass('folder-nav-active');
-      //$(this).addClass('folder-nav-active');
-    //});
-
-
-    //$( ".img_preview" ).draggable();
-
+  
     doDraggable();
 
 
@@ -100,18 +88,18 @@ $(document).ready(
 });
 
 
-function doDraggable(event, ui) {
+function doDraggable() {
   $(".img_preview").draggable({
+    cursor: "grabbing",
     revert: "invalid" ,
     helper: function(){
       var n = $("input[type='checkbox']:checked").length;
       if(n > 0) {
-        return $( "<div class='draggableHelper'>" + n + " items</div>" );
+        return $( "<div class='draggableHelper'>" + n + " items selected</div>" );
       }
       else
       {
-        $copy = $(this).clone();
-        return $copy;
+        return $(this).clone();
       }},
       appendTo: 'body',
       scroll: false
