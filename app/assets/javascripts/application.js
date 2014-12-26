@@ -41,7 +41,7 @@ $(document).ready(
       location.reload();
     });
 
-  
+
     doDraggable();
 
 
@@ -59,7 +59,18 @@ $(document).ready(
         {
           var pick = ui.draggable.attr('id');
         }
-        alert("dropped! Destination: " + $(this).attr('id') + " - Source: " + pick);
+        //alert("dropped! Destination: " + $(this).attr('id') + " - Source: " + pick);
+        //alert(document.URL);
+        var test = document.URL;
+        var testRE = test.match("projects/(.*)/contents");
+        //alert(testRE[1]);
+        $.ajax({
+          url: "/projects/" + testRE[1] + "/contents/movefile",
+          data: {
+            dest: $(this).attr('id'),
+            source: pick
+          }
+        });
       }
     });
 

@@ -31,6 +31,10 @@ class ContentsController < ApplicationController
     end
   end
 
+  def movefile
+    fail
+  end
+
   def show
     send_file(@content.location.current_path, :filename => @content.name, :target => "_blank", :disposition => 'inline', :type => @content.content_type, :x_sendfile=>true)
   end
