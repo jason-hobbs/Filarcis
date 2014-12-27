@@ -32,7 +32,7 @@ class ContentsController < ApplicationController
   end
 
   def movefile
-    fail
+    redirect_to project_contents_path(params[:dest])
   end
 
   def show
