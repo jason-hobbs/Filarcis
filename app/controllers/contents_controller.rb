@@ -32,6 +32,10 @@ class ContentsController < ApplicationController
   end
 
   def movefile
+    params[:source].split(",").each do |file|
+      @content = @project.contents.find_by(id: file)
+      @content.update_attributes(:project_id => params[:dest])
+    end
     redirect_to project_contents_path(params[:dest])
   end
 
