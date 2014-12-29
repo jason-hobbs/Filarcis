@@ -9,6 +9,7 @@ $('#<%= @project.id %>').addClass('folder-nav-active');
 window.history.pushState("object or string", "Title", "/projects/<%= @project.id %>/contents");
 //location.reload();
 doDraggable();
+dropDown();
 $('.best_in_place').on("ajax:success", function () {
   location.reload();
 });

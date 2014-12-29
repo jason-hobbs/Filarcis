@@ -43,7 +43,7 @@ $(document).ready(
 
 
     doDraggable();
-
+    dropDown();
 
 
 
@@ -147,3 +147,15 @@ $(document).bind('dragover', function (e) {
         dropZone.removeClass('in hover');
     }, 1000);
 });
+
+function dropDown() {
+  $('.nav').click(function() {
+    var menu = document.getElementById('dropdown_menu');
+
+    if(menu.style.display == 'block'){
+      menu.style.display = 'none';
+    }else {
+      menu.style.display = 'block';
+    }
+  });
+};
