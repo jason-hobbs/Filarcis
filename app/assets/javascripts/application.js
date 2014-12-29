@@ -21,12 +21,13 @@
 //= require jquery.purr
 //= require best_in_place
 //= require ckeditor/init
+//= require jquery-ui/draggable
+//= require jquery-ui/droppable
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
 
 $('.best_in_place').best_in_place();
-
 
 $(document).ready(
     function() {
@@ -40,15 +41,39 @@ $(document).ready(
       location.reload();
     });
 
-    //$('.best_in_place').on("ajax:success", function () {
-    //  location.reload();
-    //});
 
-    //$('.folder-nav').click(function()
-    //{
-      //$('.folder-nav').removeClass('folder-nav-active');
-      //$(this).addClass('folder-nav-active');
-    //});
+    doDraggable();
+
+
+
+
+    $( ".folder-nav" ).droppable({
+      hoverClass: "green",
+      drop: function(event, ui) {
+        var n = $("input[type='checkbox']:checked").length;
+        if(n > 0)
+        {
+          var pick = $("input[type='checkbox']:checked").map(function () {return this.value;}).get().join(",");
+        }
+        else
+        {
+          var pick = ui.draggable.attr('id');
+        }
+        //alert("dropped! Destination: " + $(this).attr('id') + " - Source: " + pick);
+        //alert(document.URL);
+        var test = document.URL;
+        var testRE = test.match("projects/(.*)/contents");
+        //alert(testRE[1]);
+        $.ajax({
+          url: "/projects/" + testRE[1] + "/contents/movefile",
+          data: {
+            dest: $(this).attr('id'),
+            source: pick
+          }
+        });
+      }
+    });
+
 
     $('.highlight').click(function()
     {
@@ -72,6 +97,27 @@ $(document).ready(
     });
 
 });
+
+
+function doDraggable() {
+  $(".img_preview").draggable({
+    cursor: "grabbing",
+    revert: "invalid" ,
+    helper: function(){
+      var n = $("input[type='checkbox']:checked").length;
+      if(n > 0) {
+        return $( "<div class='draggableHelper'>" + n + " items selected</div>" );
+      }
+      else
+      {
+        return $(this).clone();
+      }},
+      appendTo: 'body',
+      scroll: false
+    });
+
+}
+
 
 
 $(document).bind('dragover', function (e) {

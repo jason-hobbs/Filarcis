@@ -31,6 +31,20 @@ class ContentsController < ApplicationController
     end
   end
 
+  def movefile
+    params[:source].split(",").each do |file|
+      @content = @project.contents.find_by(id: file)
+      @note = @project.notes.find_by(id: file)
+      if @content
+        @content.update_attributes(:project_id => params[:dest])
+      end
+      if @note
+        @note.update_attributes(:project_id => params[:dest])
+      end
+    end
+    redirect_to project_contents_path(params[:dest])
+  end
+
   def show
     send_file(@content.location.current_path, :filename => @content.name, :target => "_blank", :disposition => 'inline', :type => @content.content_type, :x_sendfile=>true)
   end

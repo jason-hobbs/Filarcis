@@ -8,12 +8,15 @@ Rails.application.routes.draw do
       collection do
         delete 'destroy_multiple'
       end
+      collection do
+        get 'movefile'
+      end
     end
     resources :notes do
       collection do
         delete 'destroy_multiple'
       end
-    end  
+    end
   end
 
   resources :users
