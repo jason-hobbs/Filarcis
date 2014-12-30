@@ -18,9 +18,13 @@
 
 
 
-  </div><%= best_in_place @project, :name, {:class => "input_field"} %></h3>
-
-
+  </div>
+  <% unless @project.name == "inbox-system" %>
+    <%= best_in_place @project, :name, {:class => "input_field"} %>
+  <% else %>
+    Inbox  
+  <% end %>
+</h3>
 
 
 <div class="content_row_header">
