@@ -1,6 +1,6 @@
 <% if @project.nil? || @project.name == 'inbox-system' %>
   <%= link_to 'Dash', dashboards_path %>
-  <%= link_to 'Inbox', project_contents_path(@project), remote: true, class: "active" %>
+  <%= link_to 'Inbox', project_contents_path(@project), class: "active" %>
 <% else %>
   <%= link_to 'Dash', dashboards_path %>
   <% if @project.depth == 0 %>
