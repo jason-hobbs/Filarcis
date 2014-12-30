@@ -732,3 +732,62 @@ input[type='file'] {
   opacity: 0.7;
   min-width: 100px;
 }
+
+.nav {
+  float: right;
+  cursor: pointer;
+}
+
+.hidden_menu{
+  font-size: smaller;
+  background-color: #4D4D4D;
+  color: #fff;
+  
+  right: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  position: absolute;
+  display: none;
+  z-index: 999;
+  ul {
+    padding: 2px;
+    margin: auto;
+  }
+  li {
+    color: #fff;
+    padding: 0px;
+    list-style: none;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  a:link, a:visited, a:focus, a:active {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+    text-shadow: none;
+  }
+  a:hover {
+    color: #008cba;
+  }
+  hr {
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+.hidden_menu:after
+{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 10px 8px;
+  border-color: #4D4D4D transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  margin-left: -11px;
+  top: -8px;
+  left: 85%;
+}
