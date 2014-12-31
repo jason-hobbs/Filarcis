@@ -44,6 +44,7 @@ $(document).ready(
 
     doDraggable();
     dropDown();
+    clickCheckBoxes();
 
 
 
@@ -104,7 +105,8 @@ function doDraggable() {
     cursor: "grabbing",
     revert: "invalid" ,
     helper: function(){
-      var n = $("input[type='checkbox']:checked").length;
+      //var n = $("input[type='checkbox']:checked").length;
+      var n = $("#content_ids_:checked").length;
       if(n > 0) {
         return $( "<div class='draggableHelper'>" + n + " items selected</div>" );
       }
@@ -118,6 +120,15 @@ function doDraggable() {
 
 }
 
+function clickCheckBoxes() {
+  $('#selectall').click(function(event) {  //on click
+    if(this.checked) { // check select status
+      $("input:checkbox").prop("checked", true);
+    }else{
+      $("input:checkbox").prop("checked", false);
+    }
+  });
+}
 
 
 $(document).bind('dragover', function (e) {
@@ -159,3 +170,10 @@ function dropDown() {
     }
   });
 };
+
+function checkall(status) {
+  //$(this).parent.find('filecheck:checkbox').attr('checked', this.checked);
+  $(".content_ids").each( function() {
+    $(this).attr("checked",status);
+  });
+}

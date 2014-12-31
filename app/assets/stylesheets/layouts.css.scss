@@ -603,7 +603,7 @@ margin-left: 2px;
   overflow: hidden;
   text-overflow:ellipsis;
   word-wrap: break-word;
-  width: 50%;
+  width: 40%;
   img {
     margin-right: 5px;
   }
@@ -613,8 +613,9 @@ margin-left: 2px;
   display:inline-block;
   line-height: 50px;
   /*margin-right: 5px;*/
-  width: 2%;
-  float: left;
+  width: 10%;
+  padding-left: 10px;
+  float: right;
 }
 
 .content_size {
@@ -637,7 +638,7 @@ margin-left: 2px;
   padding-left: 55px;
   display:inline-block;
   float: left;
-  width: 50%;
+  width: 40%;
 }
 
 .content_size_header {
@@ -654,6 +655,14 @@ margin-left: 2px;
   overflow: hidden;
   padding-left: 60px;
   width: 20%;
+}
+
+.checkall_header {
+  display:inline-block;
+  float: right;
+  /*overflow: hidden;*/
+  padding-left: 10px;
+  width: 10%;
 }
 
 #dropzone {
@@ -742,7 +751,7 @@ input[type='file'] {
   font-size: smaller;
   background-color: #4D4D4D;
   color: #fff;
-  
+
   right: 20px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;

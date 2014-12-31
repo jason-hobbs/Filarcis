@@ -22,7 +22,7 @@
   <% unless @project.name == "inbox-system" %>
     <%= best_in_place @project, :name, {:class => "input_field"} %>
   <% else %>
-    Inbox  
+    Inbox
   <% end %>
 </h3>
 
@@ -32,6 +32,7 @@
   <div class="content_name_header">Name</div>
   <div class="content_size_header show-for-large-up">Size</div>
   <div class="content_date_header show-for-large-up">Updated</div>
+  <div class="checkall_header"><input type="checkbox" id="selectall"/></div>
 </div>
 
 <% @project.notes.order(:title).each do |content| %>
