@@ -44,6 +44,7 @@ $(document).ready(
 
     doDraggable();
     dropDown();
+    clickCheckBoxes();
 
 
 
@@ -118,6 +119,15 @@ function doDraggable() {
 
 }
 
+function clickCheckBoxes() {
+  $('#selectall').click(function(event) {  //on click
+    if(this.checked) { // check select status
+      $("input:checkbox").prop("checked", true);
+    }else{
+      $("input:checkbox").prop("checked", false);
+    }
+  });
+}
 
 
 $(document).bind('dragover', function (e) {
