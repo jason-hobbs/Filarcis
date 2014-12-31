@@ -105,7 +105,8 @@ function doDraggable() {
     cursor: "grabbing",
     revert: "invalid" ,
     helper: function(){
-      var n = $("input[type='checkbox']:checked").length;
+      //var n = $("input[type='checkbox']:checked").length;
+      var n = $("#content_ids_:checked").length;
       if(n > 0) {
         return $( "<div class='draggableHelper'>" + n + " items selected</div>" );
       }
