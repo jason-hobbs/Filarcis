@@ -27,19 +27,19 @@ body {
   background: #f4f4f4;
   border-radius: 3px;
   padding: 0;
-  -moz-box-shadow:    1px 1px 1px #E4E5E6;
+  /*-moz-box-shadow:    1px 1px 1px #E4E5E6;
   -webkit-box-shadow: 1px 1px 1px #E4E5E6;
-  box-shadow:         1px 1px 1px #E4E5E6;
+  box-shadow:         1px 1px 1px #E4E5E6;*/
   h3 {
     background: #efefef; /* Old browsers */
-    background: -moz-linear-gradient(top,  #efefef 0%, #dfe1e2 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(100%,#dfe1e2)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #efefef 0%,#dfe1e2 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #efefef 0%,#dfe1e2 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #efefef 0%,#dfe1e2 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #efefef 0%,#dfe1e2 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#dfe1e2',GradientType=0 ); /* IE6-9 */
-    text-shadow: white 0 1px 0;
+    /*background: -moz-linear-gradient(top,  #efefef 0%, #dfe1e2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(100%,#dfe1e2));
+    background: -webkit-linear-gradient(top,  #efefef 0%,#dfe1e2 100%);
+    background: -o-linear-gradient(top,  #efefef 0%,#dfe1e2 100%);
+    background: -ms-linear-gradient(top,  #efefef 0%,#dfe1e2 100%);
+    background: linear-gradient(to bottom,  #efefef 0%,#dfe1e2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#dfe1e2',GradientType=0 );
+    text-shadow: white 0 1px 0;*/
     padding-left: 5px;
     border-bottom: solid 1px #cdcdcd;
     border-color: #d4d4d4;
@@ -47,7 +47,7 @@ body {
     border-right-color: #d4d4d4;
     border-bottom-color: #cdcdcd;
     border-left-color: #d4d4d4;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 1px white inset;
+    /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 1px white inset;*/
     font-size: 1.0em;
     font-weight: bold;
     line-height: 18px;
