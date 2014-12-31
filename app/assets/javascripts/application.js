@@ -170,10 +170,3 @@ function dropDown() {
     }
   });
 };
-
-function checkall(status) {
-  //$(this).parent.find('filecheck:checkbox').attr('checked', this.checked);
-  $(".content_ids").each( function() {
-    $(this).attr("checked",status);
-  });
-}
