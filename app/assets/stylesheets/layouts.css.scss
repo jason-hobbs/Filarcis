@@ -1,7 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Merriweather+Sans);
 
-a, a:visited, a:focus, a:active, a:hover{
+a, a:visited, a:focus, a:active {
     outline:0 none !important;
+    color: #5e6469;
+}
+
+a:hover {
+  color: #6F98BA;
 }
 
 body {
