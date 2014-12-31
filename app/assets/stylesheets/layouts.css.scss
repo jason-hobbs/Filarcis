@@ -27,9 +27,9 @@ body {
   background: #f4f4f4;
   border-radius: 3px;
   padding: 0;
-  -moz-box-shadow:    1px 1px 1px #D7D7D7;
-  -webkit-box-shadow: 1px 1px 1px #D7D7D7;
-  box-shadow:         1px 1px 1px #D7D7D7;
+  -moz-box-shadow:    1px 1px 1px #E4E5E6;
+  -webkit-box-shadow: 1px 1px 1px #E4E5E6;
+  box-shadow:         1px 1px 1px #E4E5E6;
   h3 {
     background: #efefef; /* Old browsers */
     background: -moz-linear-gradient(top,  #efefef 0%, #dfe1e2 100%); /* FF3.6+ */
@@ -606,9 +606,9 @@ margin-left: 2px;
 .content_remove {
   display:inline-block;
   line-height: 50px;
-  /*margin-right: 5px;*/
   width: 10%;
   padding-left: 10px;
+  padding-right: 5px;
   float: right;
 }
 
@@ -654,7 +654,7 @@ margin-left: 2px;
 .checkall_header {
   display:inline-block;
   float: right;
-  /*overflow: hidden;*/
+  padding-right: 5px;
   padding-left: 10px;
   width: 10%;
 }
@@ -793,4 +793,14 @@ input[type='file'] {
   margin-left: -11px;
   top: -8px;
   left: 85%;
+}
+
+#selectall {
+  float: right;
+}
+
+#content_ids_ {
+  position: relative;
+  top: 15px;
+  float: right;
 }
