@@ -44,6 +44,7 @@ gem 'best_in_place'
 gem 'ckeditor'
 gem 'mini_magick'
 gem 'responders'
+gem 'rack-mini-profiler', group: :development
 # Use unicorn as the app server
 # gem 'unicorn'
 
