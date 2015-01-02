@@ -29,6 +29,9 @@ $(function(){ $(document).foundation(); });
 
 $('.best_in_place').best_in_place();
 
+jQuery.extend($.gritter.options,{time:1000,}); 
+
+
 $(document).ready(
     function() {
       $.extend($.gritter.options, {
