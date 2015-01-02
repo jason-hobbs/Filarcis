@@ -54,4 +54,11 @@
   </div>
 <% end %>
 
+<div id="signupModal" class="reveal-modal" data-reveal>
+  <%= render 'test' %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<%= link_to "Modal", '#', data: {:'reveal-id' => 'signupModal'} %>
+
+
 <% end %>
