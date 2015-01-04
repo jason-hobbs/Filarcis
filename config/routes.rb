@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       collection do
         get 'movefile'
       end
+      collection do
+        get 'view_file'
+      end
     end
     resources :notes do
       collection do

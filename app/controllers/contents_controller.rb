@@ -4,7 +4,7 @@ class ContentsController < ApplicationController
   before_action :get_user
   before_action :get_project
   before_action :get_inbox
-  before_action :get_content, only: [:show, :download_file]
+  before_action :get_content, only: [:show]
 
   def index
     @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
@@ -51,6 +51,7 @@ class ContentsController < ApplicationController
   end
 
   def view_file
+    @content = @project.contents.find_by(id: params[:content])
     send_file(@content.location.current_path, :filename => @content.name, :target => "_blank", :disposition => 'inline', :type => @content.content_type, :x_sendfile=>true)
   end
 
