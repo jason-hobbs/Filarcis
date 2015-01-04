@@ -46,6 +46,11 @@ class ContentsController < ApplicationController
   end
 
   def show
+    #send_file(@content.location.current_path, :filename => @content.name, :target => "_blank", :disposition => 'inline', :type => @content.content_type, :x_sendfile=>true)
+    render :layout => false
+  end
+
+  def view_file
     send_file(@content.location.current_path, :filename => @content.name, :target => "_blank", :disposition => 'inline', :type => @content.content_type, :x_sendfile=>true)
   end
 

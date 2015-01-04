@@ -1,0 +1,4 @@
+<a class="close-reveal-modal">&#215;</a>
+<p><%= @project.name %></p>
+<p><%= @content.name %></p>
+<%= link_to("View File", project_content_path(@project, @content), :class => 'button tiny radius', :target => "_blank") %>

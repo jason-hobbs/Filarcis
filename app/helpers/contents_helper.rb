@@ -4,7 +4,8 @@ module ContentsHelper
        when /^image/
          image_tag(content.location.url(:thumb).to_s, :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.name, project_content_path(@project, content)), :class => "content_name")
        when /pdf/
-         image_tag("pdf3.png", :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.name, project_content_path(@project, content)), :class => "content_name")
+         #image_tag("pdf3.png", :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.name, project_content_path(@project, content)), :class => "content_name")
+         image_tag("pdf3.png", :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.name, project_content_path(@project, content), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true}), :class => "content_name")
        when /msword/
          image_tag("doc.png", :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.name, project_content_path(@project, content)), :class => "content_name")
        when /x-apple-diskimage/
