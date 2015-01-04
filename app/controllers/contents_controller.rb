@@ -56,7 +56,8 @@ class ContentsController < ApplicationController
   end
 
   def download_file
-    send_file @content.location.url
+    @content = @project.contents.find_by(id: params[:content])
+    send_file @content.location.current_path
   end
 
   def destroy_multiple

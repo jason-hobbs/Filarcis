@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       collection do
         get 'view_file'
       end
+      collection do
+        get 'download_file'
+      end
     end
     resources :notes do
       collection do
