@@ -1,6 +1,2 @@
 <a class="close-reveal-modal">&#215;</a>
-<div class="fileopen_row">
 <%= file_image @content %>
-</div>
-<%= link_to("Download File", download_file_project_contents_path(:content => @content.id), :class => 'button tiny radius color', :target => "_blank") %>
-<%= link_to("View File", view_file_project_contents_path(:content => @content.id), :class => 'button tiny radius color', :target => "_blank") %>
