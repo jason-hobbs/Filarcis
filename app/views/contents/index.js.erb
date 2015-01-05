@@ -1,3 +1,4 @@
+$('#spinner').css('display', 'block');
 $(".project-contents").empty();
 $(".breadcrumb").empty();
 $("#treetop").empty();
@@ -11,6 +12,7 @@ window.history.pushState("object or string", "Title", "/projects/<%= @project.id
 doDraggable();
 dropDown();
 clickCheckBoxes();
+$('#spinner').css("display", "none");
 $('.best_in_place').on("ajax:success", function () {
   location.reload();
 });

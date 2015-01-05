@@ -29,7 +29,7 @@ $(function(){ $(document).foundation(); });
 
 $('.best_in_place').best_in_place();
 
-jQuery.extend($.gritter.options,{time:1000,}); 
+jQuery.extend($.gritter.options,{time:1000,});
 
 
 $(document).ready(
@@ -48,8 +48,6 @@ $(document).ready(
     doDraggable();
     dropDown();
     clickCheckBoxes();
-
-
 
     $( ".folder-nav" ).droppable({
       hoverClass: "green",
@@ -80,7 +78,7 @@ $(document).ready(
 
 
     $('.highlight').click(function()
-    {
+    {            
       $('.folder-nav').removeClass('folder-nav-active');
       $(this).parent().addClass('folder-nav-active');
     });

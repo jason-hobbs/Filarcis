@@ -852,3 +852,13 @@ input[type='file'] {
 .reveal-modal-bg {
   position: fixed;
 }
+
+.spinner {
+  background-image: image-url("loader.gif");
+  width: 50%;
+  margin: 0 auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100px;
+  display: none;
+}
