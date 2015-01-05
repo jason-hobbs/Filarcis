@@ -2,7 +2,7 @@
 
 a, a:visited, a:focus, a:active {
     outline:0 none !important;
-    color: #5e6469;
+    /*color: #5e6469;*/
 }
 
 a:hover {
@@ -35,6 +35,12 @@ body {
   /*-moz-box-shadow:    1px 1px 1px #E4E5E6;
   -webkit-box-shadow: 1px 1px 1px #E4E5E6;
   box-shadow:         1px 1px 1px #E4E5E6;*/
+  a, a:visited, a:focus, a:active {
+    color: #5e6469;
+  }
+  a:hover {
+    color: #6F98BA;
+  }
   h3 {
     background: #efefef; /* Old browsers */
     /*background: -moz-linear-gradient(top,  #efefef 0%, #dfe1e2 100%);
@@ -579,6 +585,18 @@ margin-left: 2px;
   text-overflow: ellipsis;
 }
 
+.fileopen_row {
+  position: relative;
+  overflow: hidden;
+  height: 75px;
+  width: 100%;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+
 .content_row_header {
   position: relative;
   /*overflow: hidden;*/
@@ -608,6 +626,19 @@ margin-left: 2px;
   }
 }
 
+.file_name {
+  display:inline-block;
+  line-height: 45px;
+  float: left;
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  font-size: larger;
+  word-wrap: break-word;
+  img {
+    margin-right: 5px;
+  }
+}
 .content_remove {
   display:inline-block;
   line-height: 50px;
@@ -808,4 +839,16 @@ input[type='file'] {
   position: relative;
   top: 18px;
   float: right;
+}
+
+.space {
+  margin-right: 5px;
+}
+
+.reveal-modal{
+  position : fixed;
+}
+
+.reveal-modal-bg {
+  position: fixed;
 }
