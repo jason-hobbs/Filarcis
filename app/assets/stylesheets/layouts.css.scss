@@ -585,6 +585,18 @@ margin-left: 2px;
   text-overflow: ellipsis;
 }
 
+.fileopen_row {
+  position: relative;
+  overflow: hidden;
+  height: 75px;
+  width: 100%;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  padding-left: 10px;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+
 .content_row_header {
   position: relative;
   /*overflow: hidden;*/
@@ -614,6 +626,19 @@ margin-left: 2px;
   }
 }
 
+.file_name {
+  display:inline-block;
+  line-height: 45px;
+  float: left;
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  font-size: larger;
+  word-wrap: break-word;
+  img {
+    margin-right: 5px;
+  }
+}
 .content_remove {
   display:inline-block;
   line-height: 50px;
