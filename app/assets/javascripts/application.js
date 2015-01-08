@@ -78,7 +78,7 @@ $(document).ready(
 
 
     $('.highlight').click(function()
-    {            
+    {
       $('.folder-nav').removeClass('folder-nav-active');
       $(this).parent().addClass('folder-nav-active');
     });
@@ -96,6 +96,12 @@ $(document).ready(
 
 
       $(this).parent().next().toggle();
+    });
+
+    $(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
+      //$(".project-contents").empty();
+      //$("<%= escape_javascript(render 'contents/entries') %>").appendTo(".project-contents");
+      location.reload();
     });
 
 });
@@ -130,6 +136,7 @@ function clickCheckBoxes() {
     }
   });
 }
+
 
 
 $(document).bind('dragover', function (e) {
