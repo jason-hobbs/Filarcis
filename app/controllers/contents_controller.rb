@@ -1,10 +1,11 @@
 class ContentsController < ApplicationController
+  respond_to :html, :json
   before_action :require_signin
   #before_action :require_admin
   before_action :get_user
   before_action :get_project
   before_action :get_inbox
-  before_action :get_content, only: [:show]
+  before_action :get_content, only: [:show, :update]
 
   def index
     @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
@@ -29,6 +30,11 @@ class ContentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    @content.update_attributes(content_params)
+    respond_with @content
   end
 
   def movefile
