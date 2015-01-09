@@ -62,4 +62,11 @@ class ApplicationController < ActionController::Base
 
   helper_method :get_content
 
+  def require_correct_user
+    @user = User.find(@project.user_id)
+    redirect_to root_url unless current_user?(@user)
+  end
+
+  helper_method :require_correct_user
+
 end

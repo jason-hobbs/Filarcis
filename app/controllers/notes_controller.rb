@@ -2,6 +2,7 @@ class NotesController < ApplicationController
   before_action :require_signin
   before_action :get_user
   before_action :get_project
+  before_action :require_correct_user
   before_action :get_note, only: [:show, :edit, :update]
 
   def index

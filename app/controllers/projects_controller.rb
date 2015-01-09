@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   respond_to :html, :json
   before_action :get_user
+  before_action :require_correct_user
   def new
     #@project = Project.new
 
@@ -41,4 +42,5 @@ class ProjectsController < ApplicationController
   def project_params
       params.require(:project).permit(:name, :parent_id)
   end
+
 end
