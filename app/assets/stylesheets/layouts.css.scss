@@ -563,9 +563,10 @@ margin-left: 2px;
 }
 
 .folder-nav-active {
-  background-color: #d7d7d7;
+  /*background-color: #C2D6FF;*/
+  background-color: #E0EAFF;
   border-radius:5px;
-  a:link {
+  a:link, a:hover {
     text-decoration: none;
     color: #5e6469;
   }
