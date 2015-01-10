@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   respond_to :html, :json
   before_action :get_user
-  before_action :require_correct_user
+  before_action :require_correct_user, except: [:new, :create]
   def new
     #@project = Project.new
 
