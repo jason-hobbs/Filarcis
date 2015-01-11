@@ -17,6 +17,16 @@ class ContentsController < ApplicationController
     end
   end
 
+  def justentries
+    @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
+    @contents = @project.contents
+    @notes = @project.notes
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
   def new
     @content=Content.new
   end

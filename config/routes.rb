@@ -17,6 +17,9 @@ Rails.application.routes.draw do
       collection do
         get 'download_file'
       end
+      collection do
+        get 'justentries'
+      end
     end
     resources :notes do
       collection do
