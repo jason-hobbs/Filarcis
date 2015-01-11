@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   respond_to :html, :json
   before_action :get_user
+  before_action :project, only: [:update, :destroy]
   before_action :require_correct_user, except: [:new, :create, :update]
   def new
     #@project = Project.new
@@ -25,13 +26,11 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    @project = Project.find(params[:id])
     @project.update_attributes(project_params)
     respond_with @project
   end
 
   def destroy
-    @project = Project.find(params[:id])
     unless @project.name == 'inbox-system'
       @project.destroy
     end
@@ -41,6 +40,10 @@ class ProjectsController < ApplicationController
   private
   def project_params
       params.require(:project).permit(:name, :parent_id)
+  end
+
+  def project
+    @project = Project.find(params[:id])
   end
 
 end
