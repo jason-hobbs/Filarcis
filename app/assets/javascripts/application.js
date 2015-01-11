@@ -99,9 +99,13 @@ $(document).ready(
     });
 
     $(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
-      //$(".project-contents").empty();
-      //$("<%= escape_javascript(render 'contents/entries') %>").appendTo(".project-contents");
-      location.reload();
+      var test = document.URL;
+      var testRE = test.match("projects/(.*)/contents");
+      //window.location.href = "/projects/" + testRE[1] + "/contents/justentries";
+      //location.reload();
+      $.ajax({
+        url: "/projects/" + testRE[1] + "/contents/justentries"
+      });
     });
 
 });

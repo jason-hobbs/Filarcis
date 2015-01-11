@@ -1,0 +1,10 @@
+$('#spinner').css('display', 'block');
+$(".project-contents").empty();
+$("<%= escape_javascript(render 'entries') %>").appendTo(".project-contents");
+doDraggable();
+dropDown();
+clickCheckBoxes();
+$('#spinner').css("display", "none");
+$('.best_in_place').on("ajax:success", function () {
+  location.reload();
+});
