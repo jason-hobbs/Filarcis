@@ -51,6 +51,7 @@ group :development, :test do
 end
 group :test do
   gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 # Use unicorn as the app server
