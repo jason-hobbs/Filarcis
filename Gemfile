@@ -47,13 +47,11 @@ gem 'responders'
 gem 'rack-mini-profiler', group: :development
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'minitest'
 end
 group :test do
-  gem 'faker'
   gem 'capybara'
-  gem 'guard-rspec'
-  gem 'launchy'
+  gem 'selenium-webdriver'
 end
 
 # Use unicorn as the app server
