@@ -53,7 +53,6 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
-gem 'newrelic_rpm'
 # Use unicorn as the app server
 # gem 'unicorn'
 
