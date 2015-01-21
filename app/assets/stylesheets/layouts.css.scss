@@ -86,6 +86,8 @@ body {
 #panel-upload {
   height: 100%;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .panel-contents-upload {
