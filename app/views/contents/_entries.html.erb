@@ -36,7 +36,7 @@
   <div class="checkall_header"><input type="checkbox" id="selectall"/></div>
 </div>
 
-<% @project.notes.order(:title).each do |content| %>
+<% @notes.each do |content| %>
 <div class="content_row">
   <%= image_tag("note.png", :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.title, project_note_path(@project, content)), :class => "content_name") %>
   <%= content_tag(:div, "note", :class => "content_size show-for-large-up") %>
@@ -45,8 +45,7 @@
 </div>
 <% end %>
 
-
-<% @project.contents.order(:name).each do |content| %>
+<% @contents.each do |content| %>
   <div class="content_row">
      <%= file_type content %>
      <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size show-for-large-up") %>

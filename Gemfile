@@ -33,7 +33,6 @@ gem 'bcrypt'
 gem 'gritter'
 gem 'carrierwave'
 gem 'jquery-turbolinks'
-gem 'will_paginate'
 gem 'bullet', group: :development
 gem "jquery-fileupload-rails"
 gem "rmagick"

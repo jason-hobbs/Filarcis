@@ -9,8 +9,8 @@ class ContentsController < ApplicationController
 
   def index
     @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
-    @contents = @project.contents
-    @notes = @project.notes
+    @contents = @project.contents.order(:name)
+    @notes = @project.notes.order(:title)
     respond_to do |format|
       format.js
       format.html
@@ -19,8 +19,8 @@ class ContentsController < ApplicationController
 
   def justentries
     @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
-    @contents = @project.contents
-    @notes = @project.notes
+    @contents = @project.contents.order(:name)
+    @notes = @project.notes.order(:title)
     respond_to do |format|
       format.js
       format.html
