@@ -9,7 +9,7 @@ class SearchController < ApplicationController
       redirect_to root_url, :gflash => { :warning => "No search term entered" }
     else
       @query = params[:query]
-      @notes = Note.where('title ilike ?', "%#{@query}%")
+      @notes = Note.where('title ilike ?', "%#{@query}%").where(project_id: Project.where(user_id: @user.id))
       @contents = Content.where('name ilike ?', "%#{@query}%").where(project_id: Project.where(user_id: @user.id))
     end
   end
