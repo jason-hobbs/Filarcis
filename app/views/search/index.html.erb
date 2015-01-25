@@ -1,0 +1,17 @@
+
+
+<div class="bodywrapper">
+  <br>
+  <div class="panel" id="panel-upload"><h3>Search for <%= @query %><%= link_to 'return', root_url, :style => "float: right;" %></h3>
+
+<div class="bodywrapper">
+  <% @notes.each do |note| %>
+  <p><%= note.title %></p>
+  <% end %>
+  <% @contents.each do |file| %>
+    <p><%= file.name %></p>
+  <% end %>
+
+</div>
+</div>
+</div>
