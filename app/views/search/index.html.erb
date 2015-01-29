@@ -25,7 +25,7 @@
 
   <% @contents.each do |content| %>
   <div class="content_row">
-    <%= file_type content %>
+    <%= file_type(content, controller_name) %>
     <%= content_tag(:div, link_to(content.project.name, project_contents_path(content.project)), :class => "content_project") %>
     <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size show-for-large-up") %>
     <%= content_tag(:div, content.updated_at.strftime("%-m/%-d/%Y %H:%M"), :class => "content_date show-for-large-up") %>
