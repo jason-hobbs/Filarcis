@@ -101,11 +101,17 @@ $(document).ready(
     $(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
       var test = document.URL;
       var testRE = test.match("projects/(.*)/contents");
-      //window.location.href = "/projects/" + testRE[1] + "/contents/justentries";
-      //location.reload();
-      $.ajax({
-        url: "/projects/" + testRE[1] + "/contents/justentries"
-      });
+      if(testRE === null){
+        testRE = test.match("&query=(.*)");
+        $.ajax({
+          url: "/justsearch?utf8=✓&query=" + testRE[1]
+        });
+        //window.location.href = "/search?utf8=✓&query=" + testRE[1];
+      } else {
+        $.ajax({
+          url: "/projects/" + testRE[1] + "/contents/justentries"
+        });
+      };
     });
 
 });
