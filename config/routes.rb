@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
   resources :search
 
+  get 'justsearch' => 'search#justsearch'
+
   resources :users
   root 'main#index'
 

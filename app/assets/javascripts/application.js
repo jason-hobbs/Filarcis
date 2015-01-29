@@ -103,10 +103,10 @@ $(document).ready(
       var testRE = test.match("projects/(.*)/contents");
       if(testRE === null){
         testRE = test.match("&query=(.*)");
-        //$.ajax({
-          //url: "/search?utf8=✓&query=" + testRE
-        //});
-        window.location.href = "/search?utf8=✓&query=" + testRE[1];
+        $.ajax({
+          url: "/justsearch?utf8=✓&query=" + testRE[1]
+        });
+        //window.location.href = "/search?utf8=✓&query=" + testRE[1];
       } else {
         $.ajax({
           url: "/projects/" + testRE[1] + "/contents/justentries"
