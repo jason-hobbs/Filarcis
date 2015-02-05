@@ -5,7 +5,7 @@
 <% end %>
 <% if session[:user_id] %>
   <li class="shadow">
-    <%= form_tag search_index_path, :method => 'get' do %>
+    <%= form_tag search_index_path, :class => 'searchform', :method => 'get' do %>
       <%= text_field_tag :query, params[:query], placeholder: "Search..." %>
     <% end %>
   </li>
