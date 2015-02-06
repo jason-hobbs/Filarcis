@@ -82,6 +82,13 @@ class ContentsController < ApplicationController
     end
   end
 
+  def share
+    @content = @project.contents.find_by(id: params[:content])
+    @content.public = TRUE
+    @content.save
+    redirect_to :back
+  end
+
   def destroy_multiple
     if(params[:content_ids])
       params[:content_ids].each do |file|
