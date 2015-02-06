@@ -73,7 +73,13 @@ class ContentsController < ApplicationController
 
   def download_file
     @content = @project.contents.find_by(id: params[:content])
-    send_file @content.location.current_path
+    if @content.public
+      send_file @content.location.current_path
+    else
+      unless require_correct_user
+        send_file @content.location.current_path
+      end
+    end
   end
 
   def destroy_multiple
