@@ -1,10 +1,10 @@
 class ContentsController < ApplicationController
   respond_to :html, :json
-  before_action :require_signin
-  before_action :get_user
+  before_action :require_signin, except: [:download_file]
+  before_action :get_user, except: [:download_file]
   before_action :get_project
-  before_action :get_inbox
-  before_action :require_correct_user
+  before_action :get_inbox, except: [:download_file]
+  before_action :require_correct_user, except: [:download_file]
   before_action :get_content, only: [:show, :update]
 
   def index
