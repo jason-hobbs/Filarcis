@@ -53,6 +53,14 @@ ActiveRecord::Schema.define(version: 20150206155358) do
     t.datetime "updated_at"
   end
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.integer  "user_id"

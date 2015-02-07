@@ -86,7 +86,11 @@ class ContentsController < ApplicationController
     @content = @project.contents.find_by(id: params[:content])
     @content.public = TRUE
     @content.save
-    redirect_to :back
+    #redirect_to :back
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def destroy_multiple
