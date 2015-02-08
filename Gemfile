@@ -43,6 +43,7 @@ gem 'best_in_place'
 gem 'ckeditor'
 gem 'mini_magick'
 gem 'responders'
+gem 'pry'
 gem 'rack-mini-profiler', group: :development
 group :development, :test do
   gem 'rspec-rails'

@@ -1,10 +1,10 @@
 class ContentsController < ApplicationController
   respond_to :html, :json
-  before_action :require_signin
-  before_action :get_user
+  before_action :require_signin, except: [:download_file]
+  before_action :get_user, except: [:download_file]
   before_action :get_project
-  before_action :get_inbox
-  before_action :require_correct_user
+  before_action :get_inbox, except: [:download_file]
+  before_action :require_correct_user, except: [:download_file]
   before_action :get_content, only: [:show, :update]
 
   def index
@@ -73,7 +73,27 @@ class ContentsController < ApplicationController
 
   def download_file
     @content = @project.contents.find_by(id: params[:content])
-    send_file @content.location.current_path
+    if @content.public
+      send_file @content.location.current_path
+    else
+      unless require_correct_user
+        send_file @content.location.current_path
+      end
+    end
+  end
+
+  def share
+    @content = @project.contents.find_by(id: params[:content])
+    if @content.public
+      @content.public = FALSE
+    else
+      @content.public = TRUE
+    end
+    @content.save
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def destroy_multiple

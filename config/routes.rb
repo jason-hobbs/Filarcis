@@ -15,6 +15,9 @@ Rails.application.routes.draw do
         get 'view_file'
       end
       collection do
+        get 'share'
+      end
+      collection do
         get 'download_file'
       end
       collection do

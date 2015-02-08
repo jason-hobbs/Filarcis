@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124143021) do
+ActiveRecord::Schema.define(version: 20150206155358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "ckeditor_assets", force: true do |t|
-    t.string   "data_file_name",               null: false
-    t.string   "data_content_type"
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",    limit: 255, null: false
+    t.string   "data_content_type", limit: 255
     t.integer  "data_file_size"
     t.integer  "assetable_id"
     t.string   "assetable_type",    limit: 30
@@ -32,56 +32,65 @@ ActiveRecord::Schema.define(version: 20141124143021) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
-  create_table "contents", force: true do |t|
-    t.string   "name"
+  create_table "contents", force: :cascade do |t|
+    t.string   "name",         limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "location"
+    t.string   "location",     limit: 255
     t.integer  "project_id"
-    t.string   "content_type"
-    t.string   "file_size"
+    t.string   "content_type", limit: 255
+    t.string   "file_size",    limit: 255
+    t.boolean  "public",                   default: false
   end
 
   add_index "contents", ["project_id"], name: "index_contents_on_project_id", using: :btree
 
-  create_table "notes", force: true do |t|
-    t.string   "title"
+  create_table "notes", force: :cascade do |t|
+    t.string   "title",      limit: 255
     t.text     "content"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "projects", force: true do |t|
-    t.string   "name"
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "content_id"
-    t.string   "ancestry"
+    t.string   "ancestry",   limit: 255
   end
 
   add_index "projects", ["ancestry"], name: "index_projects_on_ancestry", using: :btree
   add_index "projects", ["content_id"], name: "index_projects_on_content_id", using: :btree
   add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
-  create_table "uploads", force: true do |t|
-    t.string   "upload_file_name"
-    t.string   "upload_content_type"
+  create_table "uploads", force: :cascade do |t|
+    t.string   "upload_file_name",    limit: 255
+    t.string   "upload_content_type", limit: 255
     t.integer  "upload_file_size"
     t.datetime "upload_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.boolean  "admin",           default: false
+  create_table "users", force: :cascade do |t|
+    t.string   "name",            limit: 255
+    t.string   "email",           limit: 255
+    t.string   "password_digest", limit: 255
+    t.boolean  "admin",                       default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar"
+    t.string   "avatar",          limit: 255
   end
 
 end
