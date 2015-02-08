@@ -84,9 +84,12 @@ class ContentsController < ApplicationController
 
   def share
     @content = @project.contents.find_by(id: params[:content])
-    @content.public = TRUE
+    if @content.public
+      @content.public = FALSE
+    else
+      @content.public = TRUE
+    end
     @content.save
-    #redirect_to :back
     respond_to do |format|
       format.js
       format.html
