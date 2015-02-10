@@ -907,14 +907,22 @@ input[type='file'] {
   margin-right: 5px;
 }
 
-.reveal-modal{
-  /*position: fixed;
-  overflow: scroll;*/
+/* Chrome & Safari */
+.reveal-modal, dialog {overflow: scroll;}
+
+/* Firefox */
+@-moz-document url-prefix() {.reveal-modal, dialog {position:fixed; overflow: scroll;}}
+
+/* Internet Explorer 10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+.reveal-modal, dialog {position:fixed; overflow: scroll;}
+
 }
 
 .reveal-modal-bg {
-  /*position: fixed;
-  overflow: scroll;*/
+  position: fixed;
+  
 }
 
 .spinner {
