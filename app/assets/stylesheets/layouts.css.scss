@@ -908,11 +908,13 @@ input[type='file'] {
 }
 
 .reveal-modal{
-  /*position : fixed;*/
+  /*position: fixed;
+  overflow: scroll;*/
 }
 
 .reveal-modal-bg {
-  position: fixed;
+  /*position: fixed;
+  overflow: scroll;*/
 }
 
 .spinner {
