@@ -6,7 +6,12 @@ module ContentsHelper
       classname = 'content_name'
     end
     image = icon(content)
-    image_tag(image, :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.name, project_content_path(content.project, content), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true}), :class => classname)
+    if content.public
+      image_tag(image, :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.name, project_content_path(content.project, content), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true}) + image_tag("share3.jpg", :style => "margin-left: 5px;", :size => "15", :title => "Shared") , :class => classname)
+    else
+      image_tag(image, :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.name, project_content_path(content.project, content), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true}), :class => classname)
+    end
+    #image_tag(image, :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.name, project_content_path(content.project, content), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true}), :class => classname)
   end
 
   def file_image(content)
