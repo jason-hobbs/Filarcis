@@ -119,7 +119,7 @@ $(document).ready(
 
 function doDraggable() {
   $(".img_preview").draggable({
-    cursor: "grabbing",
+    cursor: "move",
     revert: "invalid" ,
     helper: function(){
       //var n = $("input[type='checkbox']:checked").length;
