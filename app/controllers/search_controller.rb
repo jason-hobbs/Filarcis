@@ -12,7 +12,7 @@ class SearchController < ApplicationController
       @contents = search_contents
     end
   end
-  
+
   def justsearch
     @query = params[:query]
     @notes = search_notes
@@ -25,7 +25,7 @@ class SearchController < ApplicationController
 
   private
   def search_notes
-    Note.where('title ilike ?', "%#{@query}%").where(project_id: Project.where(user_id: @user.id))
+    Note.where('title ilike ? or content ilike ?', "%#{@query}%", "%#{@query}%").where(project_id: Project.where(user_id: @user.id))
   end
 
   def search_contents
