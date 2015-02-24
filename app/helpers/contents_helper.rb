@@ -3,7 +3,7 @@ module ContentsHelper
     if controller == 'search'
       classname = 'content_name_search'
     else
-      classname = 'content_name small-10 medium-8 large-6'
+      classname = 'content_name small-10 medium-9 large-6'
     end
     image = icon(content)
     if content.public
