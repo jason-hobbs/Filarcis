@@ -682,7 +682,7 @@ margin-left: 2px;
   display:inline-block;
   line-height: 50px;
   padding-left: 10px;
-  width: 20%;
+  /*width: 20%;*/
   float: left;
 }
 
@@ -709,12 +709,7 @@ margin-left: 2px;
   /*width: 40%;*/
 }
 
-.content_name_search_header {
-  padding-left: 55px;
-  display:inline-block;
-  float: left;
-  /*width: 40%;*/
-}
+
 
 
 .content_size_header {
@@ -725,15 +720,16 @@ margin-left: 2px;
   float: left;
 }
 
-.content_size_search_header {
+/*  Search results page layout */
+
+.content_name_search_header {
+  padding-left: 55px;
   display:inline-block;
-  padding-left: 105px;
-  /*width: 20%;*/
-  overflow: hidden;
   float: left;
+  /*width: 40%;*/
 }
 
-.content_project_header {
+.content_size_search_header {
   display:inline-block;
   padding-left: 50px;
   /*width: 20%;*/
@@ -744,24 +740,26 @@ margin-left: 2px;
 .content_project_search_header {
   display:inline-block;
   padding-left: 60px;
-  /*width: 20%;*/
   overflow: hidden;
   float: left;
 }
+
+.content_date_search_header {
+  display:inline-block;
+  float: left;
+  overflow: hidden;
+  padding-left: 60px;
+}
+
+/*  End Search results page layout */
+
+
 
 .content_date_header {
   display:inline-block;
   float: left;
   overflow: hidden;
   padding-left: 50px;
-  /*width: 20%;*/
-}
-
-.content_date_search_header {
-  display:inline-block;
-  float: right;
-  overflow: hidden;
-  padding-right: 50px;
   /*width: 20%;*/
 }
 
