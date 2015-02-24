@@ -12,7 +12,7 @@
 
 <% @notes.each do |content| %>
 <div class="content_row">
-  <%= image_tag("note.png", :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.title, project_note_path(content.project, content)), :class => "content_name_search small-9 medium-6 large-6") %>
+  <%= image_tag("note.png", :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.title, project_note_path(content.project, content)), :class => "content_name_search small-9 medium-5 large-5") %>
   <%= content_tag(:div, link_to(content.project.name, project_contents_path(content.project)), :class => "content_project medium-2 large-2 show-for-medium-up") %>
   <%= content_tag(:div, "note", :class => "content_size medium-2 large-2 show-for-medium-up") %>
   <%= content_tag(:div, content.updated_at.strftime("%-m/%-d/%Y %H:%M"), :class => "content_date_search medium-2 large-2 show-for-medium-up") %>
