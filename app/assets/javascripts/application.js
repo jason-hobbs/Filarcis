@@ -93,9 +93,8 @@ $(document).ready(
       else
          src = '/images/arrow-closed.png';
       $(this).find('img').attr('src', src);
-
-
       $(this).parent().next().toggle();
+      return false;
     });
 
     $(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
