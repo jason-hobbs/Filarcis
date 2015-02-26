@@ -97,6 +97,10 @@ $(document).ready(
       return false;
     });
 
+    $(document).on('opened', '[data-reveal]', function () {
+      $("#project_name").first().focus();
+    });
+
     $(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
       var test = document.URL;
       var testRE = test.match("projects/(.*)/contents");
