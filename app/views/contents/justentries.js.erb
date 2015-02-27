@@ -1,12 +1,10 @@
-$('#spinner').css('display', 'block');
-$(".project-contents").empty();
 $.blockUI({ message: '<h5>Loading...</h5>' });
+$(".project-contents").empty();
 $("<%= escape_javascript(render 'entries') %>").appendTo(".project-contents");
 $.unblockUI();
 doDraggable();
 dropDown();
 clickCheckBoxes();
-$('#spinner').css("display", "none");
 $('.best_in_place').on("ajax:success", function () {
   location.reload();
 });
