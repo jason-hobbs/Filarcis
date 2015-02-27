@@ -42,6 +42,7 @@ gem 'ancestry'
 gem "jquery-ui-rails"
 gem 'best_in_place'
 gem 'ckeditor'
+gem 'griddler'
 gem 'mini_magick'
 gem 'responders'
 gem 'pry'
