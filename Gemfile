@@ -31,6 +31,7 @@ gem 'foundation-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 gem 'gritter'
+gem 'blockuijs-rails',  :git => 'git://github.com/rusanu/blockuijs-rails.git'
 gem 'carrierwave'
 gem 'jquery-turbolinks'
 gem 'bullet', group: :development

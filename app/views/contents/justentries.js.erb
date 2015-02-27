@@ -1,6 +1,8 @@
 $('#spinner').css('display', 'block');
 $(".project-contents").empty();
+$.blockUI({ message: '<h5>Loading...</h5>' });
 $("<%= escape_javascript(render 'entries') %>").appendTo(".project-contents");
+$.unblockUI();
 doDraggable();
 dropDown();
 clickCheckBoxes();
