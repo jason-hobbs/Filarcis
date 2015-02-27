@@ -93,8 +93,12 @@ GEM
       sass (>= 3.3.0, < 3.5)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
+    griddler (1.1.0)
+      htmlentities
+      rails (>= 3.2.0)
     gritter (1.1.0)
     hike (1.2.3)
+    htmlentities (4.3.3)
     i18n (0.7.0)
     jbuilder (2.2.8)
       activesupport (>= 3.0.0, < 5)
@@ -244,6 +248,7 @@ DEPENDENCIES
   ckeditor
   coffee-rails
   foundation-rails
+  griddler
   gritter
   jbuilder
   jquery-fileupload-rails
