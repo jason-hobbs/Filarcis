@@ -23,6 +23,7 @@
 //= require ckeditor/init
 //= require jquery-ui/draggable
 //= require jquery-ui/droppable
+//= require jquery.blockUI
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
