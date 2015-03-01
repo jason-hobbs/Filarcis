@@ -42,7 +42,6 @@ gem 'ancestry'
 gem "jquery-ui-rails"
 gem 'best_in_place'
 gem 'ckeditor'
-gem 'mailman', require: false
 gem 'mini_magick'
 gem 'responders'
 gem 'pry'
