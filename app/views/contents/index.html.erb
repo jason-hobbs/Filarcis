@@ -14,7 +14,7 @@
     <div class="panel" id="panel1"><h3>Personal</h3>
       <div class="panel-contents">
         <%= content_tag(:div, link_to(image_tag("folder2.png", {:size=>"25" }), dashboards_path, remote: true) + link_to("Inbox", dashboards_path, remote: true), :class => "folder-nav", :id => @inbox.id) %>
-        Deleted Items
+        <%= image_tag("trash.png", :size=>"20") %> Deleted Items
       </div>
     </div>
     <div class="panel" id="panel2"><h3 id="treetop">Project Folders <%= link_to image_tag("folder-delete3.png", {:size=>"25", :alt=>"Delete Project", :title=>"Delete Project", :style => "float: right; top: -4px; position: relative;"}), @project, method: :delete, data: { confirm: 'Really delete the project and all contents?' }%><%= link_to image_tag("folder-add3.png", {:size=>"25", :alt=>"New Project", :title=>"New Project", :style => "float: right; top: -4px; position: relative;"}), new_project_path, data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} %></h3>
