@@ -4,6 +4,11 @@ require "pg"
 require "bundler/setup"
 require "mailman"
 
+Mailman.config.pop3 = {
+  server: 'server',
+  username: ENV['test'],
+  password: ENV['test']
+}
 
 Mailman::Application.run do
   default do
