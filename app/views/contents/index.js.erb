@@ -1,11 +1,11 @@
-$.blockUI({ message: '<h5>Loading...</h5>' });
+//$.blockUI({ message: '<h5>Loading...</h5>'});
 $(".project-contents").empty();
 $(".breadcrumb").empty();
 $("#treetop").empty();
 $("<%= escape_javascript(render 'crumb') %>").appendTo(".breadcrumb");
 $("<%= escape_javascript(render 'treetop') %>").appendTo("#treetop");
 $("<%= escape_javascript(render 'entries') %>").appendTo(".project-contents");
-$.unblockUI();
+//$.unblockUI();
 $('.folder-nav').removeClass('folder-nav-active');
 $('#<%= @project.id %>').addClass('folder-nav-active');
 window.history.pushState("object or string", "Title", "/projects/<%= @project.id %>/contents");
@@ -15,3 +15,4 @@ clickCheckBoxes();
 $('.best_in_place').on("ajax:success", function () {
   location.reload();
 });
+//$.unblockUI();

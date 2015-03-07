@@ -1,7 +1,7 @@
-$.blockUI({ message: '<h5>Loading...</h5>' });
+//$.blockUI({ message: '<h5>Loading...</h5>'});
 $(".project-contents").empty();
 $("<%= escape_javascript(render 'entries') %>").appendTo(".project-contents");
-$.unblockUI();
+//$.unblockUI();
 doDraggable();
 dropDown();
 clickCheckBoxes();
