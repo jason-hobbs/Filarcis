@@ -84,6 +84,9 @@ GEM
     coffee-script-source (1.9.1)
     daemons (1.2.1)
     diff-lcs (1.2.5)
+    dotenv (2.0.0)
+    dotenv-rails (2.0.0)
+      dotenv (= 2.0.0)
     erubis (2.7.0)
     eventmachine (1.0.7)
     execjs (2.4.0)
@@ -243,6 +246,7 @@ DEPENDENCIES
   carrierwave
   ckeditor
   coffee-rails
+  dotenv-rails
   foundation-rails
   gritter
   jbuilder
