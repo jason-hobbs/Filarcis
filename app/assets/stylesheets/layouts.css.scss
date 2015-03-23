@@ -957,3 +957,37 @@ input[type='file'] {
 .searchform {
   background: -webkit-gradient(linear, left top, left bottom, from(#505050), to(#343434))
 }
+
+#upload {
+    position: relative;
+}
+
+#upload .wrapper {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+#upload .wrapper:hover {
+    opacity: 0;
+    background-color: blue;
+
+}
+
+#upload button {
+    background-color: #008cba;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    z-index: 1;
+}
+
+#upload button:hover {
+  cursor: pointer;
+  background-color: blue;
+}
