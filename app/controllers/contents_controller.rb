@@ -36,7 +36,7 @@ class ContentsController < ApplicationController
     @content.project_id = @project.id
     @content.name = @content.location.filename
     if @content.save
-      redirect_to dashboards_path, :gflash => { :success => "Files Uploaded" }
+      redirect_to project_contents_path(@project), :gflash => { :success => "Files Uploaded" }
     else
       render :new
     end
