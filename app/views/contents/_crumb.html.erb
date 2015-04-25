@@ -1,8 +1,12 @@
 <% if @project.nil? || @project.name == 'inbox-system' %>
-  <%= link_to 'Dash', dashboards_path %>
-  <%= link_to 'Inbox', project_contents_path(@project), class: "active" %>
+  <%= link_to dashboards_path do %>
+    <i class="fi-home"></i>
+  <% end %>
+  <%= link_to 'Inbox', project_contents_path(@project), class: "current" %>
 <% else %>
-  <%= link_to 'Dash', dashboards_path %>
+  <%= link_to dashboards_path do %>
+    <i class="fi-home"></i>
+  <% end %>
   <% if @project.depth == 0 %>
     <% if controller_name == 'notes' %>
       <%= link_to @project.name, project_contents_path(@project), class: "active" %>
