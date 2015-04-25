@@ -1,8 +1,8 @@
 //$.blockUI({ message: '<h5>Loading...</h5>'});
 $(".project-contents").empty();
-$(".breadcrumb").empty();
+$(".breadcrumbs").empty();
 $("#treetop").empty();
-$("<%= escape_javascript(render 'crumb') %>").appendTo(".breadcrumb");
+$("<%= escape_javascript(render 'crumb') %>").appendTo(".breadcrumbs");
 $("<%= escape_javascript(render 'treetop') %>").appendTo("#treetop");
 $("<%= escape_javascript(render 'entries') %>").appendTo(".project-contents");
 //$.unblockUI();

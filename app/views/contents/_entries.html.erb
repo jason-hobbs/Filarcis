@@ -9,11 +9,23 @@
     <div id="dropdown_menu" class="hidden_menu">
       <ul>
         <% unless @project.name == "inbox-system" %>
-          <li><%= content_tag(:div, link_to("Create Folder", new_project_path(:parent_id => @project.id), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} )) %></li><hr>
+          <%= link_to new_project_path(:parent_id => @project.id), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} do %>
+            <li><i class="fi-folder"></i> Create Folder</li><hr>
+          <% end %>
+          <!-- <li><%= content_tag(:div, link_to("Create Folder", new_project_path(:parent_id => @project.id), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} )) %></li><hr> -->
         <% end %>
-        <li><%= content_tag(:div, link_to("Create Note", new_project_note_path(@project))) %></li><hr>
-        <li><%= content_tag(:div, link_to('Delete Checked', "#"), :onclick => "$('#delete_form').submit()") %></li><hr>
-        <li><%= content_tag(:div, link_to("Upload", new_project_content_path(@project))) %></li>
+        <%= link_to new_project_note_path(@project) do %>
+          <li><i class="fi-book"></i> Create Note</li><hr>
+        <% end %>
+        <!-- <li><%= content_tag(:div, link_to("Create Note", new_project_note_path(@project))) %></li><hr>-->
+        <%= link_to "#", :onclick => "$('#delete_form').submit()" do %>
+          <li><i class="fi-page-delete"></i> Delete Checked</li><hr>
+        <% end %>
+        <!-- <li><%= content_tag(:div, link_to('Delete Checked', "#"), :onclick => "$('#delete_form').submit()") %></li><hr> -->
+        <%= link_to new_project_content_path(@project) do %>
+          <li><i class="fi-upload"></i> Upload</li><hr>
+        <% end %>
+        <!-- <li><%= content_tag(:div, link_to("Upload", new_project_content_path(@project))) %></li> -->
       </ul>
     </div>
 

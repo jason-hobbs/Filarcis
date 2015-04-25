@@ -28,7 +28,7 @@ gem 'sdoc',          group: :doc
 gem 'spring',        group: :development
 gem 'thin',        group: :development
 gem 'foundation-rails'
-
+gem 'foundation-icons-sass-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 gem 'gritter'

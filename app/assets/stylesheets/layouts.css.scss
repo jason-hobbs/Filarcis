@@ -14,7 +14,6 @@ body {
   font-size: 14px;
 }
 
-
 @media only screen and (max-width: 950px) {
   .medium-collapse {
     padding:0;
@@ -882,7 +881,7 @@ input[type='file'] {
     font-weight: normal;
     text-shadow: none;
   }
-  a:hover {
+  a li:hover {
     color: #6F98BA;
   }
   hr {
@@ -990,4 +989,42 @@ input[type='file'] {
 #upload button:hover {
   cursor: pointer;
   background-color: blue;
+}
+
+.subcrumb {
+  width: 80%;
+  position: relative;
+  margin: auto;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.fi-home {
+  font-size: 1rem;
+  position: relative;
+  top: -3px;
+}
+
+.breadcrumbs {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.fi-book {
+  margin-right: 3px;
+
+}
+
+.fi-page-delete {
+  margin-right: 3px;
+
+}
+
+.fi-upload {
+  margin-right: 2px;
+
+}
+
+.fi-folder {
+
 }
