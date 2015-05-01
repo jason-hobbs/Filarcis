@@ -1024,3 +1024,9 @@ input[type='file'] {
   margin-right: 2px;
 
 }
+
+@-moz-document url-prefix() {
+html { overflow: hidden; height: 100%; }
+
+body { overflow: auto; height: 100%; }
+}
