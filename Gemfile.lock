@@ -101,7 +101,7 @@ GEM
     foundation-icons-sass-rails (3.0.0)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
-    foundation-rails (5.5.2.0)
+    foundation-rails (5.5.1.2)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
     globalid (0.3.5)
@@ -252,7 +252,7 @@ DEPENDENCIES
   coffee-rails
   dotenv-rails
   foundation-icons-sass-rails
-  foundation-rails
+  foundation-rails (= 5.5.1.2)
   gritter
   jbuilder
   jquery-fileupload-rails
