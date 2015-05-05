@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/turbolinks.git
-  revision: 69e2034992036609137725d7e3e11a1f8f76a61e
+  revision: 09e47f46f5127bf98337ec9a28dc16aec1d06ed1
   specs:
     turbolinks (3.0.0)
       coffee-rails
@@ -58,7 +58,7 @@ GEM
       actionpack (>= 3.2)
       railties (>= 3.2)
     builder (3.2.2)
-    bullet (4.14.5)
+    bullet (4.14.6)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.9.0)
     capybara (2.4.4)
@@ -101,7 +101,7 @@ GEM
     foundation-icons-sass-rails (3.0.0)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
-    foundation-rails (5.5.1.2)
+    foundation-rails (5.5.2.1)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
     globalid (0.3.5)
@@ -252,7 +252,7 @@ DEPENDENCIES
   coffee-rails
   dotenv-rails
   foundation-icons-sass-rails
-  foundation-rails (= 5.5.1.2)
+  foundation-rails
   gritter
   jbuilder
   jquery-fileupload-rails
