@@ -15,7 +15,7 @@
   <%= image_tag("note.png", :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.title, project_note_path(content.project, content)), :class => "content_name_search small-9 medium-5 large-5") %>
   <%= content_tag(:div, link_to(content.project.name, project_contents_path(content.project)), :class => "content_project medium-2 large-2 show-for-medium-up") %>
   <%= content_tag(:div, "note", :class => "content_size medium-2 large-2 show-for-medium-up") %>
-  <%= content_tag(:div, content.updated_at.strftime("%-m/%-d/%Y %H:%M"), :class => "content_date_search medium-2 large-2 show-for-medium-up") %>
+  <%= content_tag(:div, content.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date_search medium-2 large-2 show-for-medium-up") %>
 </div>
 <% end %>
 
@@ -24,7 +24,7 @@
   <%= file_type(content, controller_name) %>
   <%= content_tag(:div, link_to(content.project.name, project_contents_path(content.project)), :class => "content_project medium-2 large-2 show-for-medium-up") %>
   <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size medium-2 large-2 show-for-medium-up") %>
-  <%= content_tag(:div, content.updated_at.strftime("%-m/%-d/%Y %H:%M"), :class => "content_date_search medium-2 large-2 show-for-medium-up") %>
+  <%= content_tag(:div, content.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date_search medium-2 large-2 show-for-medium-up") %>
 </div>
 <% end %>
 </div>
