@@ -33,6 +33,10 @@ $('.best_in_place').best_in_place();
 jQuery.extend($.gritter.options,{time:1000,});
 
 
+$(window).bind("popstate", function() {
+      $.getScript(location.href);
+    });
+
 $(document).ready(
     function() {
       $.extend($.gritter.options, {
