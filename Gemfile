@@ -48,6 +48,9 @@ gem 'responders'
 gem 'pry'
 gem 'rack-mini-profiler', group: :development
 gem 'traceroute', group: :development
+group :development do
+  gem "rails-erd"
+end
 group :development, :test do
   gem 'rspec-rails'
   gem 'minitest'
