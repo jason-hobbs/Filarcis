@@ -49,4 +49,6 @@ Rails.application.routes.draw do
 
   resources :dashboards, only: [:index]
 
+  resource :github_webhooks, only: :create, defaults: { formats: :json }
+
 end
