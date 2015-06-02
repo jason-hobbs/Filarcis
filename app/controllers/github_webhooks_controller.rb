@@ -3,6 +3,7 @@ class GithubWebhooksController < ActionController::Base
 
   def push(payload)
     # TODO: handle push webhook
+    redirect_to root_path
   end
 
   def webhook_secret(payload)
