@@ -1,0 +1,22 @@
+= render 'layouts/subnav'
+.bodywrapper
+  %br/
+  .row.columns
+    .small-12.medium-4.columns
+      #panel1.panel
+        %h3 Personal
+        .panel-contents
+          Inbox
+          %br/
+          Deleted Items
+      #panel2.panel
+        %h3
+          Project Folders #{link_to image_tag("folder-add3.png", {:size=>"25", :alt=>"New Project", :title=>"New Project", :style => "float: right; top: -4px; position: relative;"}), new_project_path, data: {:"reveal-id" => "myModal", :"reveal-ajax" => true}}
+        .panel-contents
+          = nested_folders @projects.arrange(:order => :created_at)
+    .small-12.medium-8.columns
+      #panel2.panel.project-contents
+        %h3 Project Contents
+        .bodywrapper
+          %br/
+  #myModal.reveal-modal{"data-reveal" => ""}

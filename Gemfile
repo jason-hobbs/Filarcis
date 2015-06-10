@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.2'
 gem 'rails'
+gem 'haml-rails'
 gem 'dotenv-rails'
 gem 'pg'
 gem 'sass-rails'

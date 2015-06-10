@@ -1,0 +1,18 @@
+.subcrumb.show-for-medium-up
+  .breadcrumbs
+    = render 'crumb'
+.bodywrapper
+  %br/
+  #panel-upload.panel
+    %h3
+      Upload Files #{link_to 'return', project_contents_path(@project), :style => "float: right;"}
+    .panel-contents-upload
+      #dropzone.fade.well Drop files here
+      %p Or click browse to open your file manager...
+      = render 'form'
+      %script#template-upload{:type => "text/x-tmpl"}
+        :cdata
+          <div class="upload">
+          {%=o.name%}
+          <div class="progress radius"><span class="meter" style="width: 0%"></span></div>
+          </div>

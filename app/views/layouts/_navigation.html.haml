@@ -1,0 +1,11 @@
+.sticky
+  %nav.top-bar{"data-topbar" => ""}
+    %ul.title-area
+      %li.name
+        %h1.shadow= link_to "Filarcis", root_path
+      %li.toggle-topbar.menu-icon
+        %a{:href => "#"}
+          %span Menu
+    .top-bar-section
+      %ul.right
+        = render 'layouts/navigation_links'

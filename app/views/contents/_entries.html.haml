@@ -1,0 +1,53 @@
+= form_tag destroy_multiple_project_contents_path, :multipart => true, method: :delete, id: "delete_form" do
+  %h3
+    .nav
+      = image_tag("hamburger2.png", size: "25x19", :style => "top: -5px; position: relative;")
+      #dropdown_menu.hidden_menu
+        %ul
+          - unless @project.name == "inbox-system"
+            = link_to new_project_path(:parent_id => @project.id), data: {:"reveal-id" => "myModal", :"reveal-ajax" => true} do
+              %li
+                %i.fi-folder
+                Create Folder
+              %hr/
+            / <li><haml_loud> content_tag(:div, link_to(&quot;Create Folder&quot;, new_project_path(:parent_id =&gt; @project.id), data: {:&quot;reveal-id&quot; =&gt; &quot;myModal&quot;, :&quot;reveal-ajax&quot; =&gt; true} )) </haml_loud></li><hr>
+          = link_to new_project_note_path(@project) do
+            %li
+              %i.fi-book
+              Create Note
+            %hr/
+          / <li><haml_loud> content_tag(:div, link_to(&quot;Create Note&quot;, new_project_note_path(@project))) </haml_loud></li><hr>
+          = link_to "#", :onclick => "$('#delete_form').submit()" do
+            %li
+              %i.fi-page-delete
+              Delete Checked
+            %hr/
+          / <li><haml_loud> content_tag(:div, link_to(&#39;Delete Checked&#39;, &quot;#&quot;), :onclick =&gt; &quot;$(&#39;#delete_form&#39;).submit()&quot;) </haml_loud></li><hr>
+          = link_to new_project_content_path(@project) do
+            %li
+              %i.fi-upload
+              Upload
+            %hr/
+          / <li><haml_loud> content_tag(:div, link_to(&quot;Upload&quot;, new_project_content_path(@project))) </haml_loud></li>
+    - unless @project.name == "inbox-system"
+      = best_in_place @project, :name, {:class => "input_field"}
+    - else
+      Inbox
+  .content_row_header
+    .content_name_header.small-9.medium-9.large-6 Name
+    .content_size_header.small-2.medium-2.show-for-large-up Size
+    .content_date_header.small-2.medium-2.show-for-large-up Uploaded
+    .checkall_header.small-1.medium-1
+      %input#selectall{:type => "checkbox"}/
+  - @notes.each do |content|
+    .content_row
+      = image_tag("note.png", :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.title, project_note_path(@project, content)), :class => "content_name small-8 medium-9 large-6")
+      = content_tag(:div, "note", :class => "content_size small-2 medium-2 show-for-large-up")
+      = content_tag(:div, content.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date small-2 medium-2 show-for-large-up")
+      = content_tag(:div, check_box_tag("content_ids[]", content.id), :class => "content_remove small-1 medium-1")
+  - @contents.each do |content|
+    .content_row
+      = file_type(content, controller_name)
+      = content_tag(:div, number_to_human_size(content.file_size), :class => "content_size small-2 medium-2 show-for-large-up")
+      = content_tag(:div, content.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date small-2 medium-2 show-for-large-up")
+      = content_tag(:div, check_box_tag("content_ids[]", content.id), :class => "content_remove small-1 medium-1 large-1")

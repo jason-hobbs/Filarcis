@@ -1,0 +1,13 @@
+.subcrumb.show-for-medium-up
+  .breadcrumbs
+    = render 'contents/crumb'
+.bodywrapper
+  %br/
+  .small-12.columns
+    #panel2.panel.project-contents
+      %h3
+        = @note.title
+        = link_to 'return', project_contents_path(@project), :style => "float: right;"
+        = content_tag(:div, "|",:style => "float:right;padding-left: 5px;padding-right: 5px;")
+        = link_to 'edit', edit_project_note_path(@project, @note), :style => "float: right;"
+      = content_tag(:div, raw(@note.content), :style => "padding: 5px;")
