@@ -1,4 +1,6 @@
 Rails.application.configure do
+  require_relative '../../lib/assets/selective_assets_compressor'
+  config.assets.js_compressor = SelectiveAssetsCompressor.new
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
