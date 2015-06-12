@@ -1,0 +1,18 @@
+<div class="subcrumb show-for-medium-up">
+  <div class="breadcrumbs">
+    <%= render 'contents/crumb' %>
+  </div>
+</div>
+
+<div class="bodywrapper">
+  <br>
+
+  <div class="small-12 columns">
+    <div class="panel project-contents" id="panel2">
+      <h3><%= @note.title %><%= link_to 'return', project_contents_path(@project), :style => "float: right;" %><%= content_tag(:div, "|",:style => "float:right;padding-left: 5px;padding-right: 5px;") %><%= link_to 'edit', edit_project_note_path(@project, @note), :style => "float: right;" %></h3>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
+
+</div>

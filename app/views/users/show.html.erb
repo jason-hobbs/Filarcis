@@ -1,0 +1,21 @@
+<div class="bodywrapper">
+<br>
+
+<p>
+  <%= image_tag @user.avatar_url.to_s, size: "80x80", :class => "gravatar2" %>
+  <br>
+  <strong>Name:</strong>
+  <%= @user.name %><br>
+
+
+
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user), class: "button tiny radius" %>
+<%= link_to 'Logout', logout_path, method: :delete, :class => "button tiny radius" %>
+<% if current_user_admin? %>
+  <%= link_to 'All Users', users_path, class: "button tiny radius" %>
+<% end %>
+</div>

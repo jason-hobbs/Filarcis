@@ -35,11 +35,8 @@ class ContentsController < ApplicationController
     @content = Content.new(content_params)
     @content.project_id = @project.id
     @content.name = @content.location.filename
-    if @content.save
-      redirect_to project_contents_path(@project), :gflash => { :success => "Files Uploaded" }
-    else
-      render :new
-    end
+    @content.save
+    render :new
   end
 
   def update

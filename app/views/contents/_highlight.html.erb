@@ -1,0 +1,25 @@
+<% if @project.depth > 1 %>
+  <% @project.ancestors.each do |ancestor| %>
+    <script type='text/javascript'>
+      var src = '/images/arrow-open.png';
+      $('#<%= ancestor.id %>').parent().show();
+      var origsrc = $('#<%= ancestor.id %>').parent().prev().find('img').attr('src');
+      if (origsrc == '/images/arrow-closed.png') {
+        $('#<%= ancestor.id %>').parent().prev().find('img').first().attr('src', src);
+      }
+    </script>
+  <% end %>
+<% end %>
+
+
+
+<script type='text/javascript'>
+  $('#<%= @project.id %>').addClass('folder-nav-active');
+  var src = '/images/arrow-open.png';
+  $('#<%= @project.id %>').parent().show();
+  var origsrc = $('#<%= @project.id %>').parent().prev().find('img').attr('src');
+  if (origsrc == '/images/arrow-closed.png') {
+    $('#<%= @project.id %>').parent().prev().find('img').first().attr('src', src);
+  }
+
+</script>

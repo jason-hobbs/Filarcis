@@ -1,0 +1,27 @@
+<div class="subcrumb show-for-medium-up">
+  <div class="breadcrumbs">
+    <%= render 'crumb' %>
+  </div>
+</div>
+
+<div class="bodywrapper">
+<br>
+
+  <div class="panel" id="panel-upload"><h3>Upload Files <%= link_to 'return', project_contents_path(@project), :style => "float: right;" %></h3>
+    <div class="panel-contents-upload">
+      <div id="dropzone" class="fade well">Drop files here</div>
+      <p>Or click browse to open your file manager...</p>
+      <%= render 'form' %>
+
+
+
+<script id="template-upload" type="text/x-tmpl">
+
+<div class="upload">
+  {%=o.name%}
+  <div class="progress radius"><span class="meter" style="width: 0%"></span></div>
+</div>
+</script>
+</div>
+</div>
+</div>

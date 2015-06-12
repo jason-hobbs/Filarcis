@@ -1,0 +1,15 @@
+<!-- <li class="divider"></li> -->
+<!-- <li class="divider"></li> -->
+<% if current_user_admin? %>
+  <!--<li class="shadow"><%= link_to 'Dashboard', dashboards_path %></li>-->
+<% end %>
+<% if session[:user_id] %>
+  <li class="shadow">
+    <%= form_tag search_index_path, :class => 'searchform', :method => 'get' do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search..." %>
+    <% end %>
+  </li>
+  <li class="shadow"><%= link_to image_tag(@current_user.avatar_url.to_s, size: "35x35", :class => "gravatar") + ' ' + @current_user.name, @current_user %></li>
+<% else %>
+  <li class="shadow"><%= link_to 'Sign In', new_session_path %></li>
+<% end %>
