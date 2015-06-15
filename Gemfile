@@ -17,6 +17,7 @@ gem 'thin',        group: :development
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
 gem 'bcrypt'
+gem 'newrelic_rpm'
 gem 'gritter'
 gem 'blockuijs-rails',  :git => 'git://github.com/rusanu/blockuijs-rails.git'
 gem 'carrierwave'
