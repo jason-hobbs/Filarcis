@@ -6,3 +6,4 @@ languages:
 exclude_paths:
 - "app/helpers/dashboard_helper.rb"
 - "app/helpers/contents_helper.rb"
+- "app/controllers/uploads_controller.rb"
