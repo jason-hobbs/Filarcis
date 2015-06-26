@@ -1,4 +1,5 @@
 {<img src="https://codeclimate.com/github/jason-hobbs/Filarcis/badges/gpa.svg" />}[https://codeclimate.com/github/jason-hobbs/Filarcis]
+{<img alt="Status?branch=master" src="https://codeship.com/projects/6e051b80-efbb-0132-3fa5-5a08b2b236f6/status?branch=master" />}[https://codeship.com/projects/84399]
 
 == README
 
