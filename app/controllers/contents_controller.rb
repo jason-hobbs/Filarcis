@@ -6,11 +6,9 @@ class ContentsController < ApplicationController
   before_action :get_inbox, except: [:download_file]
   before_action :require_correct_user, except: [:download_file]
   before_action :get_content, only: [:show, :update]
+  before_action :get_all, only: [:index, :justentries]
 
   def index
-    @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
-    @contents = @project.contents.order(:name)
-    @notes = @project.notes.order(:title)
     respond_to do |format|
       format.js
       format.html
@@ -18,9 +16,6 @@ class ContentsController < ApplicationController
   end
 
   def justentries
-    @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
-    @contents = @project.contents.order(:name)
-    @notes = @project.notes.order(:title)
     respond_to do |format|
       format.js
       format.html
@@ -108,6 +103,12 @@ class ContentsController < ApplicationController
   end
 
 private
+
+def get_all
+  @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
+  @contents = @project.contents.order(:name)
+  @notes = @project.notes.order(:title)
+end
 
 def content_params
     params.require(:content).permit(:name, :location, :project_id)
