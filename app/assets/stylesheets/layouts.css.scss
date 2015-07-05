@@ -1027,3 +1027,16 @@ html { overflow: hidden; height: 100%; }
 
 body { overflow: auto; height: 100%; }
 }
+
+
+/* Chrome & Safari */
+.reveal-modal, dialog {overflow: scroll;}
+
+/* Firefox */
+
+/* Internet Explorer 10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+.reveal-modal, dialog {position:fixed; overflow: scroll;}
+
+}
