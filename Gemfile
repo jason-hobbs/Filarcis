@@ -35,7 +35,6 @@ gem 'responders'
 gem 'pry'
 gem 'github_webhook'
 gem 'octokit'
-gem 'bugsnag'
 gem 'rack-mini-profiler', group: :development
 gem 'traceroute', group: :development
 group :development do
