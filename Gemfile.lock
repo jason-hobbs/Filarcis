@@ -102,6 +102,7 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     daemons (1.2.3)
+    dalli (2.7.4)
     diff-lcs (1.2.5)
     dotenv (2.0.2)
     dotenv-rails (2.0.2)
@@ -303,6 +304,7 @@ DEPENDENCIES
   carrierwave
   ckeditor (= 4.1.1)
   coffee-rails
+  dalli
   dotenv-rails
   foundation-icons-sass-rails
   foundation-rails

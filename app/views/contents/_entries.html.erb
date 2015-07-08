@@ -48,22 +48,26 @@
   <div class="checkall_header small-1 medium-1"><input type="checkbox" id="selectall"/></div>
 </div>
 
-<% @notes.each do |content| %>
-<div class="content_row">
-  <%= image_tag("note.png", :style => 'float:left;', :class => "img_preview", :id => content.id) + content_tag(:div, link_to(content.title, project_note_path(@project, content)), :class => "content_name small-8 medium-9 large-6") %>
-  <%= content_tag(:div, "note", :class => "content_size small-2 medium-2 show-for-large-up") %>
-  <%= content_tag(:div, content.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date small-2 medium-2 show-for-large-up") %>
-  <%= content_tag(:div, check_box_tag("content_ids[]", content.id), :class => "content_remove small-1 medium-1") %>
-</div>
+<% @notes.each do |note| %>
+  <% cache note do %>
+    <div class="content_row">
+      <%= image_tag("note.png", :style => 'float:left;', :class => "img_preview", :id => note.id) + content_tag(:div, link_to(note.title, project_note_path(@project, note)), :class => "content_name small-8 medium-9 large-6") %>
+      <%= content_tag(:div, "note", :class => "content_size small-2 medium-2 show-for-large-up") %>
+      <%= content_tag(:div, note.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date small-2 medium-2 show-for-large-up") %>
+      <%= content_tag(:div, check_box_tag("content_ids[]", note.id), :class => "content_remove small-1 medium-1") %>
+    </div>
+  <% end %>
 <% end %>
 
 <% @contents.each do |content| %>
-  <div class="content_row">
-     <%= file_type(content, controller_name) %>
-     <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size small-2 medium-2 show-for-large-up") %>
-     <%= content_tag(:div, content.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date small-2 medium-2 show-for-large-up") %>
-     <%= content_tag(:div, check_box_tag("content_ids[]", content.id), :class => "content_remove small-1 medium-1 large-1") %>
-  </div>
+  <% cache content do %>
+    <div class="content_row">
+       <%= file_type(content, controller_name) %>
+       <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size small-2 medium-2 show-for-large-up") %>
+       <%= content_tag(:div, content.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date small-2 medium-2 show-for-large-up") %>
+       <%= content_tag(:div, check_box_tag("content_ids[]", content.id), :class => "content_remove small-1 medium-1 large-1") %>
+    </div>
+  <% end %>
 <% end %>
 
 
