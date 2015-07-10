@@ -1030,13 +1030,13 @@ body { overflow: auto; height: 100%; }
 
 
 /* Chrome & Safari */
-.reveal-modal, dialog {overflow: scroll;}
+.reveal-modal, dialog {overflow: auto;}
 
 /* Firefox */
 
 /* Internet Explorer 10+ */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 
-.reveal-modal, dialog {position:fixed; overflow: scroll;}
+.reveal-modal, dialog {position:fixed; overflow: auto;}
 
 }
