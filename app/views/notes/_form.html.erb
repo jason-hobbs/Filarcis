@@ -18,12 +18,8 @@
 
 
 
-    <%= f.label "Entry", class: "bold" %>
-    <font size="2"><%= link_to "Markdown", "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" %> supported</font>
-    <%= f.text_area :content, :cols => 40, :rows => 15 %>
-    <br>
-
-
+    <span><b>Entry </b><font size="2">(<%= link_to "Markdown", "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" %> supported)</font></span>
+    <%= f.text_area :content, :cols => 40, :rows => 15, class: "radius" %>
     <%= f.submit "Save Note", class: 'button tiny radius' %>
 
 

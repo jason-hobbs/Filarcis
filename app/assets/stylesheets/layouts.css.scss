@@ -1040,3 +1040,11 @@ body { overflow: auto; height: 100%; }
 .reveal-modal, dialog {position:fixed; overflow: auto;}
 
 }
+
+input[type="text"]:focus, input[type="password"]:focus {
+  background-color: #FFFFCC;
+}
+
+textarea:focus {
+  background: #FFFFCC;
+}
