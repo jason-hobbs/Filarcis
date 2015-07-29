@@ -29,7 +29,8 @@ gem "rack-test"
 gem 'ancestry'
 gem "jquery-ui-rails"
 gem 'best_in_place'
-gem 'ckeditor', '=4.1.1'
+gem 'coderay'
+gem 'redcarpet'
 gem 'mini_magick'
 gem 'responders'
 gem 'dalli'

@@ -13,13 +13,14 @@
 <% end %>
 
 
-    <%= f.label "Title", class: "bold" %><br>
+    <%= f.label "Title", class: "bold" %>
     <%= f.text_field :title, :size=>"50", class: "radius entry", :autofocus=>true %>
 
 
 
-    <%= f.label "Entry", class: "bold" %><br>
-    <%= f.cktext_area :content %>
+    <%= f.label "Entry", class: "bold" %>
+    <font size="2"><%= link_to "Markdown", "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" %> supported</font>
+    <%= f.text_area :content, :cols => 40, :rows => 15 %>
     <br>
 
 
