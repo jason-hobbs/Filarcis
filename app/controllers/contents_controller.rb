@@ -1,5 +1,6 @@
 class ContentsController < ApplicationController
   respond_to :html, :json
+  helper_method :sort_column, :sort_direction
   before_action :require_signin, except: [:download_file]
   before_action :get_user, except: [:download_file]
   before_action :get_project
@@ -106,12 +107,22 @@ private
 
 def get_all
   @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
-  @contents = @project.contents.order(:name)
+  #@contents = @project.contents.order(:name)
+  @contents = @project.contents.order(sort_column + ' ' + sort_direction)
   @notes = @project.notes.order(:title)
 end
 
 def content_params
     params.require(:content).permit(:name, :location, :project_id)
 end
+
+private
+  def sort_column
+    Content.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
 
 end
