@@ -109,7 +109,8 @@ def get_all
   @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
   #@contents = @project.contents.order(:name)
   @contents = @project.contents.order(sort_column + ' ' + sort_direction)
-  @notes = @project.notes.order(:title)
+  #@notes = @project.notes.order(:title)
+  @notes = @project.notes.order(sort_column_notes + ' ' + sort_direction)
 end
 
 def content_params
@@ -119,6 +120,10 @@ end
 private
   def sort_column
     Content.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def sort_column_notes
+    Note.column_names.include?(params[:sort]) ? params[:sort] : "title"
   end
 
   def sort_direction
