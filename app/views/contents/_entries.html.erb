@@ -1,6 +1,6 @@
 <%= form_tag destroy_multiple_project_contents_path, :multipart => true, method: :delete, id: "delete_form" do %>
 
-<h3><div class="nav"><%= image_tag("hamburger2.png", size: "25x19", :style => "top: -5px; position: relative;") %>
+  <h3><div class="nav"><%= image_tag("hamburger2.png", size: "25x19", :style => "top: -5px; position: relative;") %>
 
 
 
@@ -31,44 +31,46 @@
 
 
 
+    </div>
+    <% unless @project.name == "inbox-system" %>
+      <%= best_in_place @project, :name, {:class => "input_field"} %>
+    <% else %>
+      Inbox
+    <% end %>
+  </h3>
+
+
+  <div class="content_row_header">
+
+    <div class="content_name_header small-9 medium-9 large-6"><%= sortable "name" %></div>
+    <div class="content_size_header small-2 medium-2 show-for-large-up"><%= sortable "file_size"%></div>
+    <div class="content_date_header small-2 medium-2 show-for-large-up"><%= sortable "updated_at"%></div>
+    <div class="checkall_header small-1 medium-1"><input type="checkbox" id="selectall"/></div>
   </div>
-  <% unless @project.name == "inbox-system" %>
-    <%= best_in_place @project, :name, {:class => "input_field"} %>
-  <% else %>
-    Inbox
+
+  <% @notes.each do |note| %>
+    <% cache note do %>
+      <div class="content_row">
+        <%= image_tag("note.png", :style => 'float:left;', :class => "img_preview", :id => note.id) + content_tag(:div, link_to(note.title, project_note_path(@project, note)), :class => "content_name small-8 medium-9 large-6") %>
+        <%= content_tag(:div, "note", :class => "content_size small-2 medium-2 show-for-large-up") %>
+        <%= content_tag(:div, note.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date small-2 medium-2 show-for-large-up") %>
+        <%= content_tag(:div, check_box_tag("content_ids[]", note.id), :class => "content_remove small-1 medium-1") %>
+      </div>
+    <% end %>
   <% end %>
-</h3>
 
-
-<div class="content_row_header">
-
-  <div class="content_name_header small-9 medium-9 large-6"><%= sortable "name" %></div>
-  <div class="content_size_header small-2 medium-2 show-for-large-up"><%= sortable "file_size"%></div>
-  <div class="content_date_header small-2 medium-2 show-for-large-up"><%= sortable "updated_at"%></div>
-  <div class="checkall_header small-1 medium-1"><input type="checkbox" id="selectall"/></div>
-</div>
-
-<% @notes.each do |note| %>
-  <% cache note do %>
-    <div class="content_row">
-      <%= image_tag("note.png", :style => 'float:left;', :class => "img_preview", :id => note.id) + content_tag(:div, link_to(note.title, project_note_path(@project, note)), :class => "content_name small-8 medium-9 large-6") %>
-      <%= content_tag(:div, "note", :class => "content_size small-2 medium-2 show-for-large-up") %>
-      <%= content_tag(:div, note.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date small-2 medium-2 show-for-large-up") %>
-      <%= content_tag(:div, check_box_tag("content_ids[]", note.id), :class => "content_remove small-1 medium-1") %>
-    </div>
+  <% @contents.each do |content| %>
+    <% cache content do %>
+      <div class="content_row">
+         <%= file_type(content, controller_name) %>
+         <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size small-2 medium-2 show-for-large-up") %>
+         <%= content_tag(:div, content.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date small-2 medium-2 show-for-large-up") %>
+         <%= content_tag(:div, check_box_tag("content_ids[]", content.id), :class => "content_remove small-1 medium-1 large-1") %>
+      </div>
+    <% end %>
   <% end %>
+
 <% end %>
 
-<% @contents.each do |content| %>
-  <% cache content do %>
-    <div class="content_row">
-       <%= file_type(content, controller_name) %>
-       <%= content_tag(:div, number_to_human_size(content.file_size), :class => "content_size small-2 medium-2 show-for-large-up") %>
-       <%= content_tag(:div, content.updated_at.strftime("%-m/%-d/%y %l:%M %P"), :class => "content_date small-2 medium-2 show-for-large-up") %>
-       <%= content_tag(:div, check_box_tag("content_ids[]", content.id), :class => "content_remove small-1 medium-1 large-1") %>
-    </div>
-  <% end %>
-<% end %>
-
-
-<% end %>
+<%= hidden_field_tag 'sort', @sort %>
+<%= hidden_field_tag 'direction', @direction %>

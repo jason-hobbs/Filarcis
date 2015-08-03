@@ -106,10 +106,18 @@ class ContentsController < ApplicationController
 private
 
 def get_all
+  if params[:sort].nil?
+    @sort = 'name'
+  else
+    @sort = params[:sort]
+  end
+  if params[:direction].nil?
+    @direction = 'asc'
+  else
+    @direction = params[:direction]
+  end
   @projects = Project.where(:user_id => @user.id).where.not(:name => 'inbox-system').order(:name)
-  #@contents = @project.contents.order(:name)
   @contents = @project.contents.order(sort_column + ' ' + sort_direction)
-  #@notes = @project.notes.order(:title)
   @notes = @project.notes.order(sort_column_notes + ' ' + sort_direction)
 end
 
