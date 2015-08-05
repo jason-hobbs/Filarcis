@@ -37,6 +37,7 @@ gem 'dalli'
 gem 'pry'
 gem 'github_webhook'
 gem 'octokit'
+gem 'rollbar', '~> 2.1.1'
 gem 'rack-mini-profiler', group: :development
 gem 'traceroute', group: :development
 group :development do
