@@ -23,6 +23,7 @@ config/initializers/secret_token.rb
 config/newrelic.yml
 config/skylight.yml
 config/initializers/rollbar.rb
+config/profile_it.yml
 
 ## Environment normalisation:
 /.bundle

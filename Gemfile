@@ -40,6 +40,7 @@ gem 'octokit'
 gem 'rollbar', '~> 2.1.1'
 gem 'rack-mini-profiler', group: :development
 gem 'traceroute', group: :development
+gem 'profile_it', '~> 0.2.9'
 group :development do
   gem "rails-erd"
   gem 'brakeman'
