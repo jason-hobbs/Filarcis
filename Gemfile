@@ -12,8 +12,6 @@ gem 'jquery-rails'
 gem 'turbolinks', :git => 'https://github.com/rails/turbolinks.git'
 gem 'jbuilder'
 gem 'sdoc',          group: :doc
-gem 'spring',        group: :development
-gem 'thin',        group: :development
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
 gem 'bcrypt'
@@ -22,7 +20,6 @@ gem 'gritter'
 gem 'blockuijs-rails',  :git => 'git://github.com/rusanu/blockuijs-rails.git'
 gem 'carrierwave'
 gem 'jquery-turbolinks'
-gem 'bullet', group: :development
 gem "jquery-fileupload-rails"
 gem "rmagick"
 gem "rack-test"
@@ -38,12 +35,14 @@ gem 'pry'
 gem 'github_webhook'
 gem 'octokit'
 gem 'rollbar', '~> 2.1.1'
-gem 'rack-mini-profiler', group: :development
-gem 'traceroute', group: :development
-gem 'profile_it', '~> 0.2.9'
 group :development do
   gem "rails-erd"
   gem 'brakeman'
+  gem 'bullet'
+  gem 'spring'
+  gem 'thin'
+  gem 'rack-mini-profiler'
+  gem 'traceroute'
 end
 group :development, :test do
   gem 'rspec-rails'
