@@ -44,6 +44,7 @@
 <div class="row left">
   <div class="small-12 columns">
     <%= f.label "Profile Picture", class: "bold" %><br>
+    <%= image_tag @user.avatar_url.to_s, size: "80x80", :class => "gravatar2" %>
     <%= f.file_field :avatar %>
   </div>
 </div>
