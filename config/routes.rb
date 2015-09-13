@@ -33,7 +33,8 @@ Rails.application.routes.draw do
   get 'justsearch' => 'search#justsearch'
 
   resources :users
-  root 'main#index'
+  #root 'main#index'
+  root 'dashboards#index'
 
   get 'signin' => 'sessions#new'
   resource :session
