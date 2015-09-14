@@ -213,7 +213,6 @@ GEM
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rmagick (2.15.4)
-    rollbar (2.1.2)
     rspec-core (3.3.2)
       rspec-support (~> 3.3.0)
     rspec-expectations (3.3.1)
@@ -330,7 +329,6 @@ DEPENDENCIES
   redcarpet
   responders
   rmagick
-  rollbar (~> 2.1.1)
   rspec-rails
   sass-rails
   sdoc
