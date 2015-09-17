@@ -109,6 +109,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     fastercsv (1.5.5)
     ffi (1.9.10)
+    font-awesome-rails (4.4.0.0)
+      railties (>= 3.2, < 5.0)
     foundation-icons-sass-rails (3.0.0)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
@@ -287,6 +289,9 @@ GEM
       json (>= 1.8.0)
     uniform_notifier (1.9.0)
     websocket (1.2.2)
+    wysiwyg-rails (1.2.8)
+      font-awesome-rails (>= 4.3.0.0)
+      railties (>= 3.2, < 5.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -306,6 +311,7 @@ DEPENDENCIES
   coffee-rails
   dalli
   dotenv-rails
+  font-awesome-rails
   foundation-icons-sass-rails
   foundation-rails
   github_webhook
@@ -339,6 +345,7 @@ DEPENDENCIES
   traceroute
   turbolinks!
   uglifier
+  wysiwyg-rails
 
 BUNDLED WITH
    1.10.6

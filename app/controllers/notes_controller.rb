@@ -1,8 +1,8 @@
 class NotesController < ApplicationController
   before_action :require_signin
   before_action :get_user
-  before_action :get_project
-  before_action :require_correct_user
+  before_action :get_project, except: [:upload_file]
+  before_action :require_correct_user, except: [:upload_file]
   before_action :get_note, only: [:show, :edit, :update]
 
   def index
@@ -15,6 +15,19 @@ class NotesController < ApplicationController
 
   def new
     @note=Note.new
+  end
+
+  def upload_file
+    if params[:file]
+      FileUtils::mkdir_p(Rails.root.join('public/uploads/files'))
+      ext = File.extname(params[:file].original_filename)
+      file_name = "#{SecureRandom.urlsafe_base64}#{ext}"
+      path = Rails.root.join('public/uploads/files/', file_name)
+      File.open(path, "wb") {|f| f.write(params[:file].read)}
+      render :text => {:link => "/uploads/files/#{file_name}"}.to_json
+    else
+      render :text => {:link => nil}.to_json
+    end
   end
 
   def create

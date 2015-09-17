@@ -34,6 +34,8 @@ gem 'dalli'
 gem 'pry'
 gem 'github_webhook'
 gem 'octokit'
+gem 'font-awesome-rails'
+gem 'wysiwyg-rails'
 group :development do
   gem "rails-erd"
   gem 'brakeman'

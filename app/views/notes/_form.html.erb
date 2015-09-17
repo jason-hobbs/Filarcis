@@ -18,11 +18,30 @@
 
 
 
-    <span><b>Entry </b><font size="2">(<%= link_to "Markdown", "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" %> supported)</font></span>
-    <%= f.text_area :content, :cols => 40, :rows => 15, class: "radius" %>
+    <span><b>Entry </b>
+    <%= f.text_area :content, :cols => 40, :rows => 15, class: "radius", id: "content" %><br>
     <%= f.submit "Save Note", class: 'button tiny radius' %>
 
 
 
 <% end %>
 </div>
+
+
+<script>
+  $(function() {
+    $('textarea#content').editable({
+      inlineMode: false,
+      imageUploadURL: '/noteupload',
+      entities: '&#39;',
+      headers: {
+        'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
+      },
+      imageUploadParams: {
+        id: 'my_editor'
+      },
+      placeholder: 'Type something',
+      buttons: ['bold', 'italic', 'underline', 'fontFamily', 'fontSize', 'color', 'formatBlock', 'blockStyle', 'align', 'insertOrderedList', 'insertUnorderedList', 'outdent', 'indent', 'createLink', 'insertImage', 'insertVideo', 'table', 'undo', 'redo', 'html', 'removeFormat', 'fullscreen'],
+    })
+  });
+</script>

@@ -28,12 +28,13 @@ Rails.application.routes.draw do
     end
   end
 
+  post 'noteupload' => 'notes#upload_file'
+
   resources :search, only: [:index]
 
   get 'justsearch' => 'search#justsearch'
 
   resources :users
-  #root 'main#index'
   root 'dashboards#index'
 
   get 'signin' => 'sessions#new'
