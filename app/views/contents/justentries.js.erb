@@ -1,7 +1,9 @@
-//$.blockUI({ message: '<h5>Loading...</h5>'});
+//$(".spinner").show();
+showLoader = setTimeout("$('.spinner').show()", 300);
 $(".project-contents").empty();
 $("<%= escape_javascript(render 'entries') %>").appendTo(".project-contents");
-//$.unblockUI();
+clearTimeout(showLoader);
+$('#spinner').hide();
 doDraggable();
 dropDown();
 clickCheckBoxes();
