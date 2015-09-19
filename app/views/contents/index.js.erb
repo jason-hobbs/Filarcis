@@ -1,4 +1,4 @@
-showLoader = setTimeout("$('.spinner').show()", 300);
+//showLoader = setTimeout("$('.spinner').show()", 300);
 //$(".spinner").show();
 $(".project-contents").empty();
 $(".breadcrumbs").empty();
@@ -6,8 +6,8 @@ $("#treetop").empty();
 $("<%= escape_javascript(render 'crumb') %>").appendTo(".breadcrumbs");
 $("<%= escape_javascript(render 'treetop') %>").appendTo("#treetop");
 $("<%= escape_javascript(render 'entries') %>").appendTo(".project-contents");
-clearTimeout(showLoader);
-$('#spinner').hide();
+//clearTimeout(showLoader);
+//$('#spinner').hide();
 //$(".spinner").delay(3000).hide(0);
 $('.folder-nav').removeClass('folder-nav-active');
 $('#<%= @project.id %>').addClass('folder-nav-active');
