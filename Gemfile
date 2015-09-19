@@ -23,6 +23,7 @@ gem 'jquery-turbolinks'
 gem "jquery-fileupload-rails"
 gem "rmagick"
 gem "rack-test"
+gem 'nprogress-rails'
 gem 'ancestry'
 gem "jquery-ui-rails"
 gem 'best_in_place'

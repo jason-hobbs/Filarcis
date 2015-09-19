@@ -38,6 +38,8 @@
 //= require plugins/urls.min.js
 //= require plugins/inline_styles.min.js
 //= require plugins/entities.min.js
+//= require nprogress
+//= require nprogress-turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
