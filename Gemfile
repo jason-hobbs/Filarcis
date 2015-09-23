@@ -26,8 +26,6 @@ gem "rack-test"
 gem 'ancestry'
 gem "jquery-ui-rails"
 gem 'best_in_place'
-gem 'coderay'
-gem 'redcarpet'
 gem 'mini_magick'
 gem 'responders'
 gem 'dalli'
