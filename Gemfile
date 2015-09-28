@@ -48,6 +48,7 @@ group :development, :test do
   gem 'minitest'
 end
 group :test do
+  gem 'database_cleaner'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
