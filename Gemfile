@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'turbolinks', :git => 'https://github.com/rails/turbolinks.git'
 gem 'jbuilder'
 gem 'sdoc',          group: :doc
-gem 'foundation-rails'
+gem 'foundation-rails', '=5.5.2.1'
 gem 'foundation-icons-sass-rails'
 gem 'bcrypt'
 gem 'newrelic_rpm'
