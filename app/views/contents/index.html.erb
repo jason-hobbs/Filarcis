@@ -12,7 +12,7 @@
     <div class="panel" id="panel1"><h3>Personal</h3>
       <div class="panel-contents">
         <%= content_tag(:div, link_to(image_tag("basic-folder-icon2.svg", {:size=>"25" }), dashboards_path, remote: true) + link_to("Inbox", dashboards_path, remote: true, id: "folder_name"), :class => "folder-nav", :id => @inbox.id) %>
-        <%= content_tag(:div, link_to(image_tag("trash.png", {:size=>"20" }), "#", remote: true) + link_to("Deleted Items", "#", remote: true, id: "folder_name"), :class => "folder-nav") %>
+        <%= content_tag(:div, link_to(image_tag("deleted-folder-icon.png", {:size=>"25" }), "#", remote: true) + link_to("Deleted Items", "#", remote: true, id: "folder_name"), :class => "folder-nav") %>
 
       </div>
     </div>
