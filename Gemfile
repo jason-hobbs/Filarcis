@@ -34,6 +34,7 @@ gem 'github_webhook'
 gem 'octokit'
 gem 'font-awesome-rails'
 gem 'wysiwyg-rails'
+gem 'rack-attack'
 group :development do
   gem "rails-erd"
   gem 'brakeman'
