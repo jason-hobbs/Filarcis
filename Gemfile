@@ -41,7 +41,7 @@ group :development do
   gem 'bullet'
   gem 'spring'
   gem 'thin'
-  gem 'rack-mini-profiler'
+  #gem 'rack-mini-profiler'
   gem 'traceroute'
 end
 group :development, :test do
