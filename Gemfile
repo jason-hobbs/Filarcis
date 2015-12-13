@@ -28,11 +28,11 @@ gem "jquery-ui-rails"
 gem 'best_in_place'
 gem 'mini_magick'
 gem 'responders'
+gem 'dalli'
 gem 'pry'
 gem 'github_webhook'
 gem 'octokit'
 gem 'font-awesome-rails'
-gem 'redis-rails'
 gem 'wysiwyg-rails'
 gem 'rack-attack'
 group :development do
