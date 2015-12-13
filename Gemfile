@@ -33,6 +33,7 @@ gem 'pry'
 gem 'github_webhook'
 gem 'octokit'
 gem 'font-awesome-rails'
+gem 'redis-rails'
 gem 'wysiwyg-rails'
 gem 'rack-attack'
 group :development do
