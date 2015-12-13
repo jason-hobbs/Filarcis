@@ -28,7 +28,6 @@ gem "jquery-ui-rails"
 gem 'best_in_place'
 gem 'mini_magick'
 gem 'responders'
-gem 'dalli'
 gem 'pry'
 gem 'github_webhook'
 gem 'octokit'
