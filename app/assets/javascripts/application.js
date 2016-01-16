@@ -222,7 +222,6 @@ function dropDown() {
 
 
 $( document ).ajaxStart(function() {
-  $(".project-contents").empty();
   timeOutHandler = setTimeout(function(){$(".spinner").show();}, 1000);
 });
 
