@@ -145,6 +145,25 @@ $(document).ready(
       };
     });
 
+
+    var $loader = $('.spinner'), timer;
+
+    $loader.hide()
+        .ajaxStart(function()
+        {
+            timer && clearTimeout(timer);
+            timer = setTimeout(function()
+            {
+                $loader.show();
+            },
+            1000);
+        })
+        .ajaxStop(function()
+        {
+            clearTimeout(timer);
+            $loader.hide();
+        });
+
 });
 
 
@@ -221,23 +240,7 @@ function dropDown() {
 };
 
 
-var $loader = $('.spinner'), timer;
 
-$loader.hide()
-    .ajaxStart(function()
-    {
-        timer && clearTimeout(timer);
-        timer = setTimeout(function()
-        {
-            $loader.show();
-        },
-        1000);
-    })
-    .ajaxStop(function()
-    {
-        clearTimeout(timer);
-        $loader.hide();
-    });
 
 
 //$( document ).ajaxStart(function() {
