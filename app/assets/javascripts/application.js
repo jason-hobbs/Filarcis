@@ -219,3 +219,56 @@ function dropDown() {
     }
   });
 };
+
+
+var animationController = function animationController()
+{
+    var timeout = null;
+    var delayBy = 200; //Number of milliseconds to wait before ajax animation starts.
+
+    var pub = {};
+
+    var actualAnimationStart = function actualAnimationStart()
+    {
+        $(".spinner").show();
+    };
+
+    var actualAnimationStop = function actualAnimationStop()
+    {
+        $(".spinner").hide();
+    };
+
+    pub.startAnimation = function animationController$startAnimation()
+    {
+        timeout = setTimeout(actualAnimationStart, delayBy);
+    };
+
+    pub.stopAnimation = function animationController$stopAnimation()
+    {
+        //If ajax call finishes before the timeout occurs, we wouldn't have
+        //shown any animation.
+        clearTimeout(timeout);
+        actualAnimationStop();
+    }
+
+    return pub;
+}();
+
+
+$(document).ready(
+    function()
+    {
+        $(document).ajaxStart(animationController.startAnimation);
+        $(document).ajaxStop(animationController.stopAnimation);
+    }
+ );
+
+
+//$( document ).ajaxStart(function() {
+//  $(".spinner").show();
+//});
+
+//$( document ).ajaxComplete(function() {
+//  $(".spinner").hide();
+//  console.log("complete ajax request");
+//});
