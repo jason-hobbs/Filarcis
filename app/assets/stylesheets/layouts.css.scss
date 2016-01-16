@@ -943,12 +943,12 @@ input[type='file'] {
 
 
 .spinner {
-  background-image: image-url("loader-test.gif");
   width: 50%;
   margin: 0 auto;
+  background-color: #DFEDF5;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100px;
+  height: auto;
   display: none;
 }
 
