@@ -145,25 +145,6 @@ $(document).ready(
       };
     });
 
-
-    var $loader = $('.spinner'), timer;
-
-    $loader.hide()
-        .ajaxStart(function()
-        {
-            timer && clearTimeout(timer);
-            timer = setTimeout(function()
-            {
-                $loader.show();
-            },
-            1000);
-        })
-        .ajaxStop(function()
-        {
-            clearTimeout(timer);
-            $loader.hide();
-        });
-
 });
 
 
@@ -240,14 +221,11 @@ function dropDown() {
 };
 
 
+$( document ).ajaxStart(function() {
+  timeOutHandler = setTimeout(function(){$(".spinner").show();}, 1000);
+});
 
-
-
-//$( document ).ajaxStart(function() {
-//  $(".spinner").show();
-//});
-
-//$( document ).ajaxComplete(function() {
-//  $(".spinner").hide();
-//  console.log("complete ajax request");
-//});
+$( document ).ajaxComplete(function() {
+  clearTimeout(timeOutHandler);
+  $(".spinner").hide();
+});
