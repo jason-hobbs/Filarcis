@@ -1,9 +1,9 @@
-//$(".spinner").show();
+$(".spinner").show();
 //showLoader = setTimeout("$('.spinner').show()", 300);
 $(".project-contents").empty();
 $("<%= escape_javascript(render 'entries') %>").appendTo(".project-contents");
 //clearTimeout(showLoader);
-//$('#spinner').hide();
+$('.spinner').hide();
 doDraggable();
 dropDown();
 clickCheckBoxes();
