@@ -221,47 +221,23 @@ function dropDown() {
 };
 
 
-var animationController = function animationController()
-{
-    var timeout = null;
-    var delayBy = 300; //Number of milliseconds to wait before ajax animation starts.
+var $loader = $('.spinner'), timer;
 
-    var pub = {};
-
-    var actualAnimationStart = function actualAnimationStart()
+$loader.hide()
+    .ajaxStart(function()
     {
-        $(".spinner").show();
-    };
-
-    var actualAnimationStop = function actualAnimationStop()
+        timer && clearTimeout(timer);
+        timer = setTimeout(function()
+        {
+            $loader.show();
+        },
+        1000);
+    })
+    .ajaxStop(function()
     {
-        $(".spinner").hide();
-    };
-
-    pub.startAnimation = function animationController$startAnimation()
-    {
-        timeout = setTimeout(actualAnimationStart, delayBy);
-    };
-
-    pub.stopAnimation = function animationController$stopAnimation()
-    {
-        //If ajax call finishes before the timeout occurs, we wouldn't have
-        //shown any animation.
-        clearTimeout(timeout);
-        actualAnimationStop();
-    }
-
-    return pub;
-}();
-
-
-$(document).ready(
-    function()
-    {
-        $(document).ajaxStart(animationController.startAnimation);
-        $(document).ajaxStop(animationController.stopAnimation);
-    }
- );
+        clearTimeout(timer);
+        $loader.hide();
+    });
 
 
 //$( document ).ajaxStart(function() {
