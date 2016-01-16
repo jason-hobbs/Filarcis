@@ -224,7 +224,7 @@ function dropDown() {
 var animationController = function animationController()
 {
     var timeout = null;
-    var delayBy = 1000; //Number of milliseconds to wait before ajax animation starts.
+    var delayBy = 300; //Number of milliseconds to wait before ajax animation starts.
 
     var pub = {};
 
