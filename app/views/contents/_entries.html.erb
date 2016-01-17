@@ -39,8 +39,6 @@
     <% end %>
   </h3>
 
-  <div class='spinner'><h4>LOADING, PLEASE WAIT...</h4></div>
-
   <div class="content_row_header">
 
     <div class="content_name_header small-9 medium-9 large-6"><%= sortable "name" %></div>
@@ -48,6 +46,8 @@
     <div class="content_date_header small-2 medium-2 show-for-large-up"><%= sortable "updated_at"%></div>
     <div class="checkall_header small-1 medium-1"><input type="checkbox" id="selectall"/></div>
   </div>
+
+  <div class='spinner'><h4>LOADING, PLEASE WAIT...</h4></div>
 
   <% @notes.each do |note| %>
     <% cache note do %>
