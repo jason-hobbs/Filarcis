@@ -5,13 +5,6 @@ GIT
     blockuijs-rails (0.1.0)
       rails (>= 3.1)
 
-GIT
-  remote: https://github.com/rails/turbolinks.git
-  revision: dd31f4b2996f2300631f89339ada82c65b95f4c2
-  specs:
-    turbolinks (3.0.0)
-      coffee-rails
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -287,6 +280,8 @@ GEM
     tilt (2.0.2)
     traceroute (0.5.0)
       rails (>= 3.0.0)
+    turbolinks (2.5.3)
+      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -294,7 +289,7 @@ GEM
       json (>= 1.8.0)
     uniform_notifier (1.9.0)
     websocket (1.2.2)
-    wysiwyg-rails (2.0.5)
+    wysiwyg-rails (2.1.0)
       font-awesome-rails (~> 4.4, >= 4.4.0.0)
       railties (>= 3.2, < 5.0)
     xpath (2.0.0)
@@ -347,7 +342,7 @@ DEPENDENCIES
   spring
   thin
   traceroute
-  turbolinks!
+  turbolinks
   uglifier
   wysiwyg-rails
 
