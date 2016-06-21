@@ -34,7 +34,7 @@ gem 'pry'
 gem 'github_webhook'
 gem 'octokit'
 gem 'font-awesome-rails'
-gem 'wysiwyg-rails', '=2.3.0'
+gem 'wysiwyg-rails'
 gem 'rack-attack'
 group :development do
   gem "rails-erd"
